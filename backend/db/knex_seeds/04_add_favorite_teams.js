@@ -13,6 +13,14 @@ exports.seed = function(knex) {
         {
           user_id: 2,
           team_id: 2
+        },
+        {
+          user_id: 3,
+          team_id: 2
+        },
+        {
+          user_id: 4,
+          team_id: 2
         }
       ]);
     })

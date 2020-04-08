@@ -32,14 +32,6 @@ exports.seed = function(knex) {
         },
         {
           team_id: 1,
-          name: "R Hyun-jin",
-          uniform_number: "99",
-          position: "P",
-          bats: "R",
-          throws: "R"
-        },
-        {
-          team_id: 1,
           name: "G Greg",
           uniform_number: "5",
           position: "2B",
@@ -59,14 +51,6 @@ exports.seed = function(knex) {
           name: "C Jake",
           uniform_number: "9",
           position: "SS",
-          bats: "R",
-          throws: "R"
-        },
-        {
-          team_id: 1,
-          name: "R Hyun-jin",
-          uniform_number: "99",
-          position: "P",
           bats: "R",
           throws: "R"
         },
@@ -102,6 +86,86 @@ exports.seed = function(knex) {
           bats: "L",
           throws: "R"
         },
+        {
+          team_id: 2,
+          name: "P David",
+          uniform_number: "33",
+          position: "P",
+          bats: "L",
+          throws: "L"
+        },
+        {
+          team_id: 2,
+          name: "B Austin",
+          uniform_number: "15",
+          position: "C",
+          bats: "R",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "M Muncy",
+          uniform_number: "13",
+          position: "1B",
+          bats: "L",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "L Galvin",
+          uniform_number: "9",
+          position: "2B",
+          bats: "L",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "T Justin",
+          uniform_number: "10",
+          position: "3B",
+          bats: "R",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "C Seager",
+          uniform_number: "5",
+          position: "SS",
+          bats: "L",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "T Chris",
+          uniform_number: "3",
+          position: "OF",
+          bats: "R",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "P A.J",
+          uniform_number: "11",
+          position: "OF",
+          bats: "R",
+          throws: "R"
+        },
+        {
+          team_id: 2,
+          name: "B Cody",
+          uniform_number: "35",
+          position: "OF",
+          bats: "L",
+          throws: "L"
+        },
+        {
+          team_id: 2,
+          name: "B Mookie",
+          uniform_number: "50",
+          position: "OF",
+          bats: "R",
+          throws: "R"
+        }
       ]);
     })
   ]);
