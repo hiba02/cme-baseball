@@ -39,11 +39,39 @@ module.exports = knex => {
     );
   };
 
+  //rabbithole
+  const registerUser = function(first_name, last_name, email, password) {
+    console.log("dbhelper: ", first_name, last_name, email, password);
+    return knex("users")
+      .insert({
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password
+      })
+      .returning("*")
+      .then(res => res[0]);
+    // will return the id for login / cookie session
+  };
+
+  //rabbithole
+  const validateUserLogin = function(email, password) {
+    return knex("users")
+      .select("*")
+      .where({
+        email: email,
+        password: password
+      })
+      .then(res => res[0])
+      .catch(e => "There was an error logging in");
+  };
   return {
     getUsers,
     getUserInfo,
     getPlayers,
     getPlayersFromSameTeam,
-    getPlayersFromUserId
+    getPlayersFromUserId,
+    registerUser,
+    validateUserLogin
   };
 };
