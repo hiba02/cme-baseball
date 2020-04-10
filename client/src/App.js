@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import axios from "axios";
 
 // Components
@@ -12,7 +12,7 @@ function App() {
   const test = () => {
     return axios({
       method: "GET",
-      url: "/users"
+      url: "/api/users"
     }).then(result => {
       console.log(result.data);
       setWord(result.data[0].first_name);
@@ -54,21 +54,28 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <button onClick={test}>TEST axios</button>
-      <p>{word}</p>
-      <Router>
-        <Switch>
-          <Route path="/login">
-            <Login login={login} />
-            {/* <Login /> */}
-          </Route>
+    <div className="app-body">
+      {/* <button onClick={test}>TEST axios</button>
+      <p>{word}</p> */}
+      <div className="app-wrap">
+        <Router>
+          <header></header>
+          <aside></aside>
+          <section>
+            <Switch>
+              <Route path="/login">
+                <Login login={login} />
+                {/* <Login /> */}
+              </Route>
 
-          <Route path="/registration">
-            <Register register={register} />
-          </Route>
-        </Switch>
-      </Router>
+              <Route path="/registration">
+                <Register register={register} />
+              </Route>
+            </Switch>
+          </section>
+          <footer></footer>
+        </Router>
+      </div>
     </div>
   );
 }

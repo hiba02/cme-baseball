@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.app-body {
+  background: #fffde7;
+}
+.app-wrap {
+  width: 1140px;
+  margin: 0 auto;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background: #283593;
+}
+aside {
+  float: left;
+  width: 15%;
+  height: 700px;
+  background: #c8e6c9;
+}
+section {
+  float: left;
+  width: 85%;
+  height: 700px;
+  background: #f9fbe7;
+}
+footer {
+  clear: both;
+  width: 100%;
+  height: 100px;
+  background: #e3f2fd;
+}
+
+/* screen width 0 ~ 1200px */
+@media (max-width: 1220px) {
+  #wrap {
+    width: 95%;
+  }
+}
+/* screen width 0 ~ 768px */
+@media (max-width: 768px) {
+  #wrap {
+    width: 100%;
+  }
+}
+
+/* screen width 0 ~ 480px */
+@media (max-width: 480px) {
+  #wrap {
+    width: 100%;
+  }
+  header {
+    height: 300px;
+  }
+  aside {
+    float: none;
+    width: 100%;
+    height: 300px;
+  }
+  section {
+    float: none;
+    width: 100%;
+    height: 300px;
+  }
+}
