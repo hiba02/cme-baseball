@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 import axios from "axios";
 
 export default function Login(props) {
+  const [userId, setUserId] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
@@ -21,8 +22,10 @@ export default function Login(props) {
         //data: {id: 13, password: "test"}
         console.log("Login true data", data);
         setRedirectHome(true);
+        setUserId(data.id);
         setEmail("");
         setPassword("");
+        console.log("userId", userId);
       } else {
         console.log("Login fail");
         setEmail("");
