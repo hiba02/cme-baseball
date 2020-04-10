@@ -44,7 +44,7 @@ function App() {
         console.log("App.js login response", response.data.password);
         if (response.data.password === password) {
           console.log("success");
-          return true;
+          return response.data;
         } else {
           console.log("fail");
           return false;

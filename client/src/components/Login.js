@@ -17,8 +17,9 @@ export default function Login(props) {
       console.log("Login.js data", data);
       // });
       // if (props.login(email, password) == true) {
-      if (data === true) {
-        console.log("Login true");
+      if (data) {
+        //data: {id: 13, password: "test"}
+        console.log("Login true data", data);
         setRedirectHome(true);
         setEmail("");
         setPassword("");
