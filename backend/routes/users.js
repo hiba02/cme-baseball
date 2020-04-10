@@ -5,7 +5,8 @@ module.exports = ({
   getUsers,
   getUserInfo,
   registerUser,
-  validateUserLogin
+  validateUserLogin,
+  userLoginValidation
 }) => {
   router.get("/", function(req, res) {
     getUsers()
@@ -34,11 +35,20 @@ module.exports = ({
   });
 
   // from rabbithole
+  // router.post("/login", function(req, res) {
+  //   console.log(req.body);
+  //   const email = req.body.email;
+  //   const password = req.body.password;
+  //   validateUserLogin(email, password).then(response => {
+  //     res.json(response);
+  //   });
+  // });
+
   router.post("/login", function(req, res) {
-    console.log(req.body);
+    console.log("route /login", req.body);
     const email = req.body.email;
     const password = req.body.password;
-    validateUserLogin(email, password).then(response => {
+    userLoginValidation(email, password).then(response => {
       res.json(response);
     });
   });

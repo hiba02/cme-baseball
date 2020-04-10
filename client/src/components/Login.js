@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { Redirect } from "react-router-dom";
 // import "./Login.scss";
+import axios from "axios";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -10,11 +11,25 @@ export default function Login(props) {
   const handleLogin = function(event) {
     console.log("Login", props);
     event.preventDefault();
+    // login(email, password);
     props.login(email, password).then(data => {
-      setRedirectHome(true);
+      // setRedirectHome(true);
+      console.log("Login.js data", data);
+      // });
+      // if (props.login(email, password) == true) {
+      if (data === true) {
+        console.log("Login true");
+        setRedirectHome(true);
+        setEmail("");
+        setPassword("");
+      } else {
+        console.log("Login fail");
+        setEmail("");
+        setPassword("");
+      }
+      setEmail("");
+      setPassword("");
     });
-    setEmail("");
-    setPassword("");
   };
 
   return (

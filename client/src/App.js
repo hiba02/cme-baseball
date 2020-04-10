@@ -20,67 +20,58 @@ function App() {
   };
   ////////////////////////////////////////////////
   // register
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  // const [firstName, setFirstName] = useState("");
+  // const [lastName, setLastName] = useState("");
+  // const [email, setEmail] = useState("");
   // const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [redirectHome, setRedirectHome] = useState(false);
+  // const [password, setPassword] = useState("");
+  // const [redirectHome, setRedirectHome] = useState(false);
 
   const register = (firstName, lastName, email, password) => {
     console.log("registration", firstName, lastName, email, password);
-    return (
-      axios({
-        method: "POST",
-        url: "api/users/registration",
-        data: {
-          firstName,
-          lastName,
-          email,
-          password
+    return axios({
+      method: "POST",
+      url: "api/users/registration",
+      data: {
+        firstName,
+        lastName,
+        email,
+        password
+      }
+    }).catch(error => console.log(error));
+  };
+
+  function login(email, password) {
+    console.log("App.js login", email, password);
+    return axios({
+      method: "POST",
+      url: "/api/users/login",
+      data: { email, password }
+    })
+      .then(response => {
+        console.log("App.js login response", response.data.password);
+        if (response.data.password === password) {
+          console.log("success");
+          return true;
+        } else {
+          console.log("fail");
+          return false;
         }
-      })
-        // .then(userInfo => {
-        // const id = userInfo.data.id;
-        // const username = userInfo.data.username;
-        // const email = userInfo.data.email;
-        ////////////
-        // const first_name = userInfo.data.firstName;
-        // const last_name = userInfo.data.lastName;
-        // const email = userInfo.data.email;
-        // const password = userInfo.data.password;
-        ////////////
+        // const id = response.data.id;
+        // const username = response.data.username;
+        // const email = response.data.email;
         // const user = {
         //   id,
         //   username,
         //   email
         // };
-        // setState({ ...state, user: user });
-        // })
-        .catch(error => console.log(error))
-    );
-  };
-
-  function login(email, password) {
-    return axios({
-      method: "POST",
-      url: "/api/users/login",
-      data: { email, password }
-    }).then(response => {
-      const id = response.data.id;
-      const username = response.data.username;
-      const email = response.data.email;
-      // const user = {
-      //   id,
-      //   username,
-      //   email
-      // };
-      // if (user) {
-      //   setState({ ...state, user: user });
-      // } else {
-      //   // send an error
-      // }
-    });
+        // if (user) {
+        //   setState({ ...state, user: user });
+        // } else {
+        //   // send an error
+        // }
+      })
+      .catch(error => console.log(error));
   }
 
   return (
@@ -91,6 +82,7 @@ function App() {
         <Switch>
           <Route path="/login">
             <Login login={login} />
+            {/* <Login /> */}
           </Route>
 
           <Route path="/registration">
