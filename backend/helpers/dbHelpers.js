@@ -68,32 +68,25 @@ module.exports = knex => {
 
   //new login validation 4.9.20
   const userLoginValidation = (email, password) => {
-    return (
-      knex("users")
-        .where({ email: email })
-        .select("id", "password")
-        // .where({
-        //   email: email,
-        //   password: password
-        // })
-        // .then(res => res[0])
-        .then(result => {
-          if (!result || !result[0]) {
-            return; //not found
-          }
-          const pass = result[0].password;
-          console.log("pass", pass);
-          console.log("result", result[0]);
+    return knex("users")
+      .where({ email: email })
+      .select("id", "password")
+      .then(result => {
+        if (!result || !result[0]) {
+          return; //not found
+        }
+        const pass = result[0].password;
+        console.log("pass", pass);
+        console.log("result", result[0]);
 
-          if (password === pass) {
-            // return pass;
-            return result[0];
-          } else {
-            console.log("login fail");
-          }
-        })
-        .catch(e => "There was an error logging in")
-    );
+        if (password === pass) {
+          // return pass;
+          return result[0];
+        } else {
+          console.log("login fail");
+        }
+      })
+      .catch(e => "There was an error logging in");
   };
   return {
     getUsers,

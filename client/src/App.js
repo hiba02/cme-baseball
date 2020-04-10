@@ -18,14 +18,6 @@ function App() {
       setWord(result.data[0].first_name);
     });
   };
-  ////////////////////////////////////////////////
-  // register
-  // const [firstName, setFirstName] = useState("");
-  // const [lastName, setLastName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [username, setUsername] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [redirectHome, setRedirectHome] = useState(false);
 
   const register = (firstName, lastName, email, password) => {
     console.log("registration", firstName, lastName, email, password);
@@ -57,19 +49,6 @@ function App() {
           console.log("fail");
           return false;
         }
-        // const id = response.data.id;
-        // const username = response.data.username;
-        // const email = response.data.email;
-        // const user = {
-        //   id,
-        //   username,
-        //   email
-        // };
-        // if (user) {
-        //   setState({ ...state, user: user });
-        // } else {
-        //   // send an error
-        // }
       })
       .catch(error => console.log(error));
   }
