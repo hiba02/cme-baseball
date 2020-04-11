@@ -24,6 +24,71 @@
   color: #ccc;
 }
 
+.header_container .header_title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 55px;
+  font-family: "Abel", sans-serif;
+}
+
+.header_container .header_title h1 {
+  font-size: 30px;
+  color: #fff;
+  background: #51b0dc;
+  display: inline-block;
+  padding: 5px 30px 5px 30px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  transition: box-shadow 0.25s ease-in-out;
+}
+.header_container .header_title h1:hover {
+  box-shadow: inset -9em 0 0 0 #257fac, inset 9em 0 0 0 #257fac;
+}
+.header_container .header_title .header_link {
+  font-size: 16px;
+  color: #fff;
+  background: #4a9abf;
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  margin-top: -15px;
+  transition: box-shadow 0.25s ease-in-out;
+}
+
+.header_container .header_title .header_link:hover {
+  box-shadow: 0 0 0 5px rgba(75, 154, 191, 0.9) inset,
+    0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
+.header_container .header_icon {
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 55px;
+  font-family: "Abel", sans-serif;
+}
+.header_container .header_icon li {
+  display: inline;
+  margin: 0 2px;
+}
+.header_container .header_icon li a {
+  background-color: #3192bf;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  display: inline-block;
+  font-size: 35px;
+  line-height: 50px;
+  transition: all 0.3s ease;
+}
+.header_container .header_icon li a span {
+  opacity: 0;
+}
+
+.header_container .header_icon li a:hover {
+  box-shadow: 0 0 0 3px rgba(75, 154, 191, 0.9) inset,
+    0 0 0 100px rgba(0, 0, 0, 0.1) inset;
+}
+
 /* media query*/
 @media (max-width: 1010px) {
   .container {

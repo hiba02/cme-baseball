@@ -1,7 +1,87 @@
-* {
+/* marginal spapce */
+body,
+div,
+ul,
+li,
+dl,
+dd,
+dt,
+ol,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+fieldset,
+legend,
+p,
+select,
+table,
+th,
+td,
+tr,
+textarea,
+button,
+form,
+figure,
+figcaption {
   margin: 0;
   padding: 0;
 }
+
+/* a link */
+a {
+  color: #222;
+  text-decoration: none;
+}
+a:hover {
+  color: #2698cb;
+}
+
+/* font */
+body,
+input,
+textarea,
+select,
+button,
+table {
+  font-family: "Nanum Gothic", AppleSDGothicNeo-Regular, "Malgun Gothic",
+    "맑은 고딕", dotum, "돋움", sans-serif;
+  color: #222;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* font style */
+em,
+address {
+  font-style: normal;
+}
+
+/* ul li ol */
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+/* h */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+// * {
+//   margin: 0;
+//   padding: 0;
+// }
 .app-body {
   background: #fffde7;
 }

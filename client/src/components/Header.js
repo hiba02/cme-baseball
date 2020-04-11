@@ -18,13 +18,46 @@ export default function Header(props) {
                 login
               </Link>
             </div>
-            <div class="header_tit">
+            {/* header title */}
+            <div class="header_title">
               <h1>CBME Baseball</h1>
               <br />
               <br />
               <Link to="/login" className="header_link">
                 Chicken
               </Link>
+            </div>
+            {/* header icons */}
+            <div class="header_icon">
+              <ul>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-html5" aria-hidden="true"></i>
+                    <span>HTML5</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://github.com/hiba02/cme-baseball"
+                  >
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <span>Github</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <span>Facebook</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <span>twitter</span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
