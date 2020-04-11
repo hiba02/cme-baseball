@@ -1,0 +1,35 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.3);
+}
+.header_container {
+  height: 250px;
+}
+
+.header_container .header_menu {
+  text-align: right;
+}
+
+.header_container .header_menu .header_link {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 0 6px 10px;
+  display: inline-block;
+  transition: color 0.3s ease;
+  font-family: "Abel", sans-serif;
+}
+
+.header_container .header_menu .header_link:hover {
+  color: #ccc;
+}
+
+/* media query*/
+@media (max-width: 1010px) {
+  .container {
+    width: 100%;
+  }
+  .row {
+    padding: 0 15px;
+  }
+}

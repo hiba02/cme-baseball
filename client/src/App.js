@@ -6,6 +6,7 @@ import axios from "axios";
 // Components
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Header from "./components/Header";
 
 function App() {
   const [word, setWord] = useState("");
@@ -59,7 +60,9 @@ function App() {
       <p>{word}</p> */}
       <div className="app-wrap">
         <Router>
-          <header></header>
+          <header>
+            <Header />
+          </header>
           <aside></aside>
           <section>
             <Switch>
