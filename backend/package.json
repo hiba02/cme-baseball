@@ -15,7 +15,8 @@
     "knex": "^0.20.13",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.2",
-    "pg": "^8.0.0"
+    "pg": "^8.0.0",
+    "react-new-window": "^0.1.2"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"

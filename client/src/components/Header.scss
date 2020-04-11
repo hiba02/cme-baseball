@@ -62,7 +62,7 @@
 .header_container .header_icon {
   text-align: center;
   text-transform: uppercase;
-  margin-top: 55px;
+  margin-top: 5px;
   font-family: "Abel", sans-serif;
 }
 .header_container .header_icon li {
@@ -96,5 +96,15 @@
   }
   .row {
     padding: 0 15px;
+  }
+}
+
+/* 화면 너비 0 ~ 600px */
+@media (max-width: 600px) {
+  .header {
+    height: auto;
+  }
+  .header .header_title {
+    display: none;
   }
 }

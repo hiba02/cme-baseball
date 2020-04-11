@@ -2,6 +2,7 @@ import React from "react";
 import "./Header.scss";
 // npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import NewWindow from "react-new-window";
 
 export default function Header(props) {
   return (
