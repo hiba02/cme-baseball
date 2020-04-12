@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import Slideshow from "./components/Slideshow";
 
 function App() {
   const [word, setWord] = useState("");
@@ -85,11 +86,11 @@ function App() {
             <Switch>
               <Route path="/login">
                 <Login login={login} />
-                {/* <Login /> */}
               </Route>
 
               <Route path="/registration">
                 <Register register={register} />
+                <Route path="/">{!userInfo && <Slideshow />}</Route>
               </Route>
             </Switch>
           </section>

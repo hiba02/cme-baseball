@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Redirect } from "react-router-dom";
-// import "./Login.scss";
+import "./Login.scss";
 import axios from "axios";
 
 export default function Login(props) {

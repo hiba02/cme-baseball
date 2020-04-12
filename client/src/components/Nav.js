@@ -1,8 +1,10 @@
 import React from "react";
 import "./Nav.scss";
+import "./Slideshow";
 // npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NewWindow from "react-new-window";
+import Slideshow from "./Slideshow";
 
 const Nav = props => {
   console.log("Nav conponent", props.userInfo);
