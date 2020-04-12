@@ -4,7 +4,7 @@ import "./Login.scss";
 import axios from "axios";
 
 export default function Login(props) {
-  const [userId, setUserId] = useState(0);
+  const [userId, setUserId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
@@ -20,9 +20,17 @@ export default function Login(props) {
       // if (props.login(email, password) == true) {
       if (data) {
         //data: {id: 13, password: "test"}
-        console.log("Login true data", data);
+        console.log("Login true data", data.id);
+        setUserId(parseInt(data.id));
         setRedirectHome(true);
-        setUserId(data.id);
+        console.log(
+          "Login userId after setUserId",
+          userId,
+          " data.id: ",
+          data.id,
+          " redirectHome: ",
+          redirectHome
+        );
         setEmail("");
         setPassword("");
         console.log("userId", userId);
@@ -39,7 +47,7 @@ export default function Login(props) {
   return (
     <Fragment>
       {/* {redirectHome && <Redirect to="/" />} */}
-      {redirectHome && <Redirect to="/" />}
+      {redirectHome && <Redirect to={`/${userId}`} />}
       <main>
         <div className="login-container">
           <form className="login-form" onSubmit={handleLogin}>

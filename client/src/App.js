@@ -90,7 +90,7 @@ function App() {
               <Route path="/registration">
                 <Register register={register} />
               </Route>
-              <Route path="/:name">
+              <Route path="/:userId">
                 {/* {!userInfo && <Slideshow />} */}
                 <Slideshow />
               </Route>
