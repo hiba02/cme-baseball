@@ -7,9 +7,12 @@ import axios from "axios";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Header from "./components/Header";
+import Nav from "./components/Nav";
 
 function App() {
   const [word, setWord] = useState("");
+  const [userId, setUserId] = useState("");
+  const [userInfo, setUserInfo] = useState(null);
   const test = () => {
     return axios({
       method: "GET",
@@ -34,7 +37,17 @@ function App() {
     }).catch(error => console.log(error));
   };
 
-  function login(email, password) {
+  const getUserInfo = userId => {
+    return axios({
+      method: "GET",
+      url: `/api/users/${userId}`
+    }).then(result => {
+      console.log("App getUserInfo", result.data[0]);
+      setUserInfo(result.data[0]);
+    });
+  };
+
+  const login = (email, password) => {
     console.log("App.js login", email, password);
     return axios({
       method: "POST",
@@ -45,6 +58,8 @@ function App() {
         console.log("App.js login response", response.data.password);
         if (response.data.password === password) {
           console.log("success");
+          setUserId(response.data.id);
+          getUserInfo(response.data.id);
           return response.data;
         } else {
           console.log("fail");
@@ -52,7 +67,7 @@ function App() {
         }
       })
       .catch(error => console.log(error));
-  }
+  };
 
   return (
     <div className="app-body">
@@ -63,7 +78,9 @@ function App() {
           <header>
             <Header />
           </header>
-          <aside></aside>
+          <aside>
+            <Nav userInfo={userInfo} />
+          </aside>
           <section>
             <Switch>
               <Route path="/login">
