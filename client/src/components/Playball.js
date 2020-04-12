@@ -1,17 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./App.scss";
 import axios from "axios";
+import "./Playball.scss";
 
-// Components
-import Login from "./components/Login";
-import Register from "./components/Register";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
-import Slideshow from "./components/Slideshow";
-import Palyball from "./components/Playball";
-
-const App = () => {
+const Palyball = props => {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState(null);
@@ -72,43 +64,15 @@ const App = () => {
   };
 
   return (
-    <div className="app-body">
-      {/* <button onClick={test}>TEST axios</button>
-      <p>{word}</p> */}
-      <div className="app-wrap">
-        <Router>
-          <header>
-            <Header />
-          </header>
-          <aside>
-            <Nav userInfo={userInfo} />
-          </aside>
-          <section>
-            <Switch>
-              <Route path="/login">
-                <Login login={login} />
-              </Route>
-              <Route path="/registration">
-                <Register register={register} />
-              </Route>
-              <Route path="/playball">
-                <Palyball userInfo={userInfo} />
-              </Route>
-              <Route path="/:userId">
-                {/* {!userInfo && <Slideshow />} */}
-                <Slideshow />
-              </Route>
-              <Route path="/">
-                {/* {!userInfo && <Slideshow />} */}
-                <Slideshow />
-              </Route>
-            </Switch>
-          </section>
-          <footer></footer>
-        </Router>
+    <div className="palyball_body">
+      <div className="playball_wrap">
+        <header className="playball_header"></header>
+        <aside className="playball_aside"></aside>
+        <section className="playball_section"></section>
+        <footer className="playball_footer"></footer>
       </div>
     </div>
   );
 };
 
-export default App;
+export default Palyball;
