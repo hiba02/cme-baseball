@@ -46,10 +46,10 @@ const Nav = props => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <Link to="/playball" className="menu_link">
               Play ball{" "}
               <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

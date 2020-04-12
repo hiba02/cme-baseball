@@ -4,6 +4,8 @@ import axios from "axios";
 import "./Playball.scss";
 
 const Palyball = props => {
+  console.log("Palyball component props: ", props);
+  console.log("Palyball component props.id: ", props.user);
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState(null);

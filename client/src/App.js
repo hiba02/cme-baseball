@@ -15,6 +15,7 @@ const App = () => {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState("");
   const [userInfo, setUserInfo] = useState(null);
+  const [playersInfo, setPlayersInfo] = useState(null);
   const test = () => {
     return axios({
       method: "GET",
@@ -49,6 +50,16 @@ const App = () => {
     });
   };
 
+  const getPlayersInfoByUserId = userId => {
+    console.log("App getPlayersInfoByUserId userId: ", userId);
+    return axios({
+      method: "GET",
+      url: `/api/players/by_user/${userId}`
+    }).then(response => {
+      console.log("App getPlayersInfoByUserId", response.data);
+    });
+  };
+
   const login = (email, password) => {
     console.log("App.js login", email, password);
     return axios({
@@ -62,6 +73,7 @@ const App = () => {
           console.log("success");
           setUserId(response.data.id);
           getUserInfo(response.data.id);
+          getPlayersInfoByUserId(response.data.id);
           return response.data;
         } else {
           console.log("fail");
@@ -92,13 +104,13 @@ const App = () => {
                 <Register register={register} />
               </Route>
               <Route path="/playball">
-                <Palyball userInfo={userInfo} />
+                <Palyball user={userInfo} />
               </Route>
-              <Route path="/:userId">
+              <Route path="/">
                 {/* {!userInfo && <Slideshow />} */}
                 <Slideshow />
               </Route>
-              <Route path="/">
+              <Route path="/:userId">
                 {/* {!userInfo && <Slideshow />} */}
                 <Slideshow />
               </Route>

@@ -35,7 +35,8 @@ module.exports = knex => {
         .innerJoin("teams", "favorite_teams.team_id", "teams.id")
         .innerJoin("players", "teams.id", "players.team_id")
         // .where("favorite_teams.team_id", "=", id);
-        .where("teams.id", "=", id)
+        // .where("teams.id", "=", id)
+        .where("users.id", "=", id)
     );
   };
 
