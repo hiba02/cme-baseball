@@ -16,8 +16,40 @@
   float: left;
   width: 35%;
   height: 550px;
-  background: #7e57c2;
+  background: #f1f8e9;
 }
+
+.roster_template {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 4px;
+  .roster_title {
+    background: #004d40;
+    color: white;
+    height: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .roster_content {
+    background: white;
+  }
+}
+
+.roster_title {
+  background: #22b8cf;
+  color: white;
+  height: 4rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .playball_section {
   float: left;
   width: 65%;

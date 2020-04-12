@@ -9,7 +9,7 @@ import Register from "./components/Register";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Slideshow from "./components/Slideshow";
-import Palyball from "./components/Playball";
+import Playball from "./components/Playball";
 
 const App = () => {
   const [word, setWord] = useState("");
@@ -51,12 +51,12 @@ const App = () => {
   };
 
   const getPlayersInfoByUserId = userId => {
-    console.log("App getPlayersInfoByUserId userId: ", userId);
     return axios({
       method: "GET",
       url: `/api/players/by_user/${userId}`
     }).then(response => {
-      console.log("App getPlayersInfoByUserId", response.data);
+      // console.log("App getPlayersInfoByUserId", response.data);
+      setPlayersInfo(response.data);
     });
   };
 
@@ -104,7 +104,7 @@ const App = () => {
                 <Register register={register} />
               </Route>
               <Route path="/playball">
-                <Palyball user={userInfo} />
+                <Playball user={userInfo} players={playersInfo} />
               </Route>
               <Route path="/">
                 {/* {!userInfo && <Slideshow />} */}
