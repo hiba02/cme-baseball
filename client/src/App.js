@@ -87,10 +87,16 @@ function App() {
               <Route path="/login">
                 <Login login={login} />
               </Route>
-
               <Route path="/registration">
                 <Register register={register} />
-                <Route path="/">{!userInfo && <Slideshow />}</Route>
+              </Route>
+              <Route path="/:name">
+                {/* {!userInfo && <Slideshow />} */}
+                <Slideshow />
+              </Route>
+              <Route path="/">
+                {/* {!userInfo && <Slideshow />} */}
+                <Slideshow />
               </Route>
             </Switch>
           </section>

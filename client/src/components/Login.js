@@ -38,6 +38,7 @@ export default function Login(props) {
 
   return (
     <Fragment>
+      {/* {redirectHome && <Redirect to="/" />} */}
       {redirectHome && <Redirect to="/" />}
       <main>
         <div className="login-container">
