@@ -10,7 +10,7 @@ exports.seed = function(knex) {
           team_id: 1,
           name: "R Hyun-jin",
           uniform_number: "99",
-          position: "P ",
+          position: "P",
           bats: "R",
           throws: "R"
         },
@@ -18,7 +18,7 @@ exports.seed = function(knex) {
           team_id: 1,
           name: "H Austin  ",
           uniform_number: "18",
-          position: "C ",
+          position: "C",
           bats: "R",
           throws: "R"
         },
@@ -58,7 +58,7 @@ exports.seed = function(knex) {
           team_id: 1,
           name: "M Will    ",
           uniform_number: "04",
-          position: "OF",
+          position: "RF",
           bats: "R",
           throws: "R"
         },
@@ -66,7 +66,7 @@ exports.seed = function(knex) {
           team_id: 1,
           name: "P Tommy   ",
           uniform_number: "28",
-          position: "OF",
+          position: "LF",
           bats: "R",
           throws: "R"
         },
@@ -74,23 +74,15 @@ exports.seed = function(knex) {
           team_id: 1,
           name: "N Josh    ",
           uniform_number: "22",
-          position: "OF",
+          position: "CF",
           bats: "L",
           throws: "L"
-        },
-        {
-          team_id: 1,
-          name: "C Franchy ",
-          uniform_number: "28",
-          position: "OF",
-          bats: "L",
-          throws: "R"
         },
         {
           team_id: 2,
           name: "P David   ",
           uniform_number: "33",
-          position: "P ",
+          position: "P",
           bats: "L",
           throws: "L"
         },
@@ -98,7 +90,7 @@ exports.seed = function(knex) {
           team_id: 2,
           name: "B Austin  ",
           uniform_number: "15",
-          position: "C ",
+          position: "C",
           bats: "R",
           throws: "R"
         },
@@ -138,7 +130,7 @@ exports.seed = function(knex) {
           team_id: 2,
           name: "T Chris   ",
           uniform_number: "03",
-          position: "OF",
+          position: "LF",
           bats: "R",
           throws: "R"
         },
@@ -146,7 +138,7 @@ exports.seed = function(knex) {
           team_id: 2,
           name: "P A.J     ",
           uniform_number: "11",
-          position: "OF",
+          position: "CF",
           bats: "R",
           throws: "R"
         },
@@ -154,7 +146,7 @@ exports.seed = function(knex) {
           team_id: 2,
           name: "B Cody    ",
           uniform_number: "35",
-          position: "OF",
+          position: "RF",
           bats: "L",
           throws: "L"
         }

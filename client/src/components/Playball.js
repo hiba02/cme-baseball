@@ -1,11 +1,12 @@
 import React, { useState, Children } from "react";
 import Roster from "./Roster";
+import FieldPosition from "./FieldPosition";
 import "./Playball.scss";
 
 const Playball = ({ user, players }) => {
   console.log("Palyball component user: ", user);
-  let number = 0;
-
+  let rostNumber = 0;
+  let positionNumber = 0;
   return (
     <div className="playball_body">
       <div className="playball_wrap">
@@ -20,13 +21,27 @@ const Playball = ({ user, players }) => {
                     user={user}
                     player={player}
                     key={player.id}
-                    number={(number = number + 1)}
+                    number={(rostNumber = rostNumber + 1)}
                   />
                 ))}
             </div>
           </div>
         </aside>
-        <section className="playball_section"></section>
+        <section className="playball_section">
+          <div className="palyball_wrap">
+            {players &&
+              players.map(player => (
+                <div className={"_" + player.position}>
+                  <FieldPosition
+                    user={user}
+                    player={player}
+                    key={player.id}
+                    number={(positionNumber = positionNumber + 1)}
+                  />
+                </div>
+              ))}
+          </div>
+        </section>
         <footer className="playball_footer"></footer>
       </div>
     </div>

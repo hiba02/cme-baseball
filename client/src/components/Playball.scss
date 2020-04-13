@@ -56,6 +56,11 @@
   height: 550px;
   background: url(../img/baseball_park3.jpg) no-repeat center;
   // background-position: 50% 50%;
+  position: relative; // for position distribution in FieldPosition.scss
+  .playball_wrap {
+    display: inline-block;
+   
+  }
 }
 .playball_footer {
   clear: both;
