@@ -24,8 +24,10 @@ const Roster = ({ player, number }) => {
   return (
     <div className="roster_body">
       <span className="id">{number}</span>
-      <span className="name">{name}</span>
-      <span className="uniform_number">{uniform_number}</span>
+      <span className="name">
+        {name},#{uniform_number}
+      </span>
+      {/* <span className="uniform_number">{uniform_number}</span> */}
       <span className="position">{position}</span>
     </div>
   );
