@@ -1,27 +1,31 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect } from "react-router-dom";
 
-const CreateTeam = ({ addTeam, currentUserInfo }) => {
+const CreateTeam = ({ addTeam, currentUserInfo, curretnUserId }) => {
   const [teamName, setTeamName] = useState("");
+  // const [userId, setUserId] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
 
   console.log("CreateTeam currentUserInfo: ", currentUserInfo);
-  console.log(
-    "CreateTeam currentUserInfo.id: ",
-    currentUserInfo ? currentUserInfo.id : ""
+  console.log("CreateTeam currentUserId.id: ", curretnUserId);
+  // let userId = 1;
+  const userId = useRef(1);
+  if (currentUserInfo) {
+    userId.current = currentUserInfo.id;
+    console.log("userId: ", userId);
+  }
+  const handleSubmit = useCallback(
+    e => {
+      e.preventDefault();
+      addTeam(teamName, curretnUserId).then(response => setRedirectHome(true));
+      setTeamName("");
+    },
+    [addTeam, teamName]
   );
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    addTeam(teamName).then(response => setRedirectHome(true));
-    // props
-    //   .register(firstName, lastName, email, password)
-    //   .then(response => setRedirectHome(true));
-
-    // props
-    //   .getUserIdTeamId(email, teamName)
-    setTeamName("");
-  };
+  const onChange = useCallback(e => {
+    setTeamName(e.target.value);
+  }, []);
 
   return (
     <Fragment>
@@ -38,7 +42,8 @@ const CreateTeam = ({ addTeam, currentUserInfo }) => {
               type="text"
               placeholder="Team name"
               value={teamName}
-              onChange={e => setTeamName(e.target.value)}
+              // onChange={e => setTeamName(e.target.value)}
+              onChange={onChange}
             />
           </div>
           <div className="createTeam-submit">

@@ -27,6 +27,14 @@ module.exports = knex => {
       .where("teams.name", "=", name);
   };
 
+  //get team names by user Id - 4.14.20
+  const getTeamNameByUserId = id => {
+    return knex
+      .select("name")
+      .from("teams")
+      .where("teams.user_id", "=", id);
+  };
+
   //get all players
   const getPlayers = () => {
     return knex.select("*").from("players");
@@ -95,11 +103,12 @@ module.exports = knex => {
   };
 
   //4.19.20: add teams when registration
-  const addTeam = function(team_name) {
-    console.log("dbhelper addTeam: ", team_name);
+  const addTeam = function(team_name, user_id) {
+    console.log("dbhelper addTeam: ", team_name, user_id);
     return knex("teams")
       .insert({
-        name: team_name
+        name: team_name,
+        user_id: user_id
       })
       .returning("*")
       .then(res => res[0]);
@@ -141,6 +150,7 @@ module.exports = knex => {
     addTeam,
     addFavoriteTeam,
     getUserInfoByEmail,
-    getTeamIdByteamName
+    getTeamIdByteamName,
+    getTeamNameByUserId
   };
 };

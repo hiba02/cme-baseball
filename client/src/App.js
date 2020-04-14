@@ -14,7 +14,7 @@ import CreateTeam from "./components/CreateTeam.js";
 import Test from "./components/Test.js";
 const App = () => {
   const [word, setWord] = useState("");
-  const [userId, setUserId] = useState("");
+  const [userId, setUserId] = useState(0);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
   const test = () => {
@@ -42,13 +42,14 @@ const App = () => {
   };
 
   // 4.19.20: registration: user informatoin in server
-  const addTeam = teamName => {
+  const addTeam = (teamName, userId) => {
     console.log("addTeam", teamName);
     return axios({
       method: "POST",
       url: "api/teams/addTeam",
       data: {
-        teamName
+        teamName,
+        userId
       }
     }).catch(error => console.log(error));
   };
@@ -61,6 +62,17 @@ const App = () => {
     }).then(result => {
       console.log(result.data);
       setWord(result.data[0].email);
+    });
+  };
+
+  // get team name by user id 4.14.20
+  const getTeamNameByUserId = id => {
+    return axios({
+      method: "GET",
+      url: `/api/teams/getTeamName/${id}`
+    }).then(result => {
+      console.log(result.data);
+      // setWord(result.data[0].email);
     });
   };
 
@@ -181,6 +193,7 @@ const App = () => {
                 <CreateTeam
                   addTeam={addTeam}
                   currentUserInfo={userInfo}
+                  curretnUserId={userId}
                   addFavoriteTeam={addFavoriteTeam}
                   getUserIdTeamId={getUserIdTeamId}
                   getUserInfoByEmail={getUserInfoByEmail}
