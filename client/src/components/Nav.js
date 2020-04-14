@@ -28,10 +28,10 @@ const Nav = props => {
             </Link>
           </li>
           <li>
-            <a href="#">
-              Team Roster{" "}
+            <Link to="/showTeam" className="menu_link">
+              Show Team{" "}
               <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#">

@@ -5,6 +5,7 @@ import "./Playball.scss";
 
 const Playball = ({ user, players }) => {
   console.log("Palyball component user: ", user);
+  console.log("Palyball component user: ", players);
   let rostNumber = 0;
   let positionNumber = 0;
   return (

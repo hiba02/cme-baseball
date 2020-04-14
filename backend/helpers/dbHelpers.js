@@ -64,6 +64,21 @@ module.exports = knex => {
     );
   };
 
+  //get all players from user ID II - 4.14.20
+  const getPlayersByUserId = id => {
+    console.log("id from getPlayersFromUserId", id);
+    return (
+      knex
+        .select("*")
+        .from("users")
+        .innerJoin("teams", "users.id", "teams.user_id")
+        .innerJoin("players", "teams.id", "players.team_id")
+        // .where("favorite_teams.team_id", "=", id);
+        // .where("teams.id", "=", id)
+        .where("teams.id", "=", id)
+    );
+  };
+
   //registration for user information
   const registerUser = function(first_name, last_name, email, password) {
     console.log("dbhelper: ", first_name, last_name, email, password);
@@ -151,6 +166,7 @@ module.exports = knex => {
     addFavoriteTeam,
     getUserInfoByEmail,
     getTeamIdByteamName,
-    getTeamNameByUserId
+    getTeamNameByUserId,
+    getPlayersByUserId
   };
 };

@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
 import CreateTeam from "./components/CreateTeam.js";
+import ShowTeam from "./components/ShowTeam.js";
 import Test from "./components/Test.js";
 const App = () => {
   const [word, setWord] = useState("");
@@ -141,6 +142,17 @@ const App = () => {
     });
   };
 
+  // 4.14.20: get players by user Id (3 tables join)
+  const getPlayersByUserId = userId => {
+    return axios({
+      method: "GET",
+      url: `/api/players/players/${userId}`
+    }).then(response => {
+      // console.log("App getPlayersInfoByUserId", response.data);
+      setPlayersInfo(response.data);
+    });
+  };
+
   const loginValidation = (email, password) => {
     console.log("App.js login", email, password);
     return axios({
@@ -154,7 +166,8 @@ const App = () => {
           console.log("success");
           setUserId(response.data.id);
           getUserInfo(response.data.id);
-          getPlayersInfoByUserId(response.data.id);
+          // getPlayersInfoByUserId(response.data.id);
+          getPlayersByUserId(response.data.id);
           return response.data;
         } else {
           console.log("fail");
@@ -197,6 +210,14 @@ const App = () => {
                   addFavoriteTeam={addFavoriteTeam}
                   getUserIdTeamId={getUserIdTeamId}
                   getUserInfoByEmail={getUserInfoByEmail}
+                />
+              </Route>
+              <Route path="/showTeam">
+                <ShowTeam
+                  getTeamNameByUserId={getTeamNameByUserId}
+                  currentUserInfo={userInfo}
+                  curretnUserId={userId}
+                  addFavoriteTeam={addFavoriteTeam}
                 />
               </Route>
               <Route path="/playball">
