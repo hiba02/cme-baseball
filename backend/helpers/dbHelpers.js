@@ -11,6 +11,8 @@ module.exports = knex => {
       .where("users.id", "=", id);
   };
 
+  //get user Id - 4.13.20
+
   //get all players
   const getPlayers = () => {
     return knex.select("*").from("players");
@@ -89,6 +91,30 @@ module.exports = knex => {
       })
       .catch(e => "There was an error logging in");
   };
+
+  //4.19.20: add teams when registration
+  const addTeam = function(team_name) {
+    console.log("dbhelper addTeam: ", team_name);
+    return knex("teams")
+      .insert({
+        name: team_name
+      })
+      .returning("*")
+      .then(res => res[0]);
+  };
+
+  //4.19.20: add userId and teamId when registration
+  const addFavoriteTeam = function(userId, teamId) {
+    console.log("dbhelper addFavoriteTeam: ", userId, teamId);
+    return knex("favorite_teams")
+      .insert({
+        user_id: userId,
+        team_id: teamId
+      })
+      .returning("*")
+      .then(res => res[0]);
+  };
+
   return {
     getUsers,
     getUserInfo,
@@ -97,6 +123,8 @@ module.exports = knex => {
     getPlayersFromUserId,
     registerUser,
     validateUserLogin,
-    userLoginValidation
+    userLoginValidation,
+    addTeam,
+    addFavoriteTeam
   };
 };

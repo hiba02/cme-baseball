@@ -7,13 +7,16 @@ export default function Register(props) {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [teamName, setTeamName] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
+    props.addTeam(teamName);
     props
       .register(firstName, lastName, email, password)
       .then(response => setRedirectHome(true));
+
     setFirstName("");
     setLastName("");
     setEmail("");
@@ -64,6 +67,17 @@ export default function Register(props) {
               placeholder="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div className="empty"></div>
+          <div className="register-addTeam">
+            Team Name:
+            <input
+              type="text"
+              placeholder="team name"
+              value={teamName}
+              onChange={e => setTeamName(e.target.value)}
             />
           </div>
           <div className="empty"></div>

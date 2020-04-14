@@ -12,6 +12,8 @@ require("dotenv").config();
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const playersRouter = require("./routes/players");
+const teamsRouter = require("./routes/teams");
+const favorite_teamsRouter = require("./routes/favorite_teams");
 
 const app = express();
 /*
@@ -46,8 +48,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter(dbHelpers));
-// app.use("/api/teams", videosRouter(dbHelpers));
+app.use("/api/teams", teamsRouter(dbHelpers));
 app.use("/api/players", playersRouter(dbHelpers));
+app.use("/api/favorite_teams", favorite_teamsRouter(dbHelpers));
 // app.use("/users", usersRouter);
 
 // app.use("/users", usersRouter(dbHelpers));

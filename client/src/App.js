@@ -25,7 +25,7 @@ const App = () => {
       setWord(result.data[0].first_name);
     });
   };
-
+  // registration: user informatoin in server
   const register = (firstName, lastName, email, password) => {
     console.log("registration", firstName, lastName, email, password);
     return axios({
@@ -36,6 +36,31 @@ const App = () => {
         lastName,
         email,
         password
+      }
+    }).catch(error => console.log(error));
+  };
+
+  // 4.19.20: registration: user informatoin in server
+  const addTeam = teamName => {
+    console.log("addTeam", teamName);
+    return axios({
+      method: "POST",
+      url: "api/teams/addTeam",
+      data: {
+        teamName
+      }
+    }).catch(error => console.log(error));
+  };
+
+  // 4.19.20: add userId and team id in favoriteTeam
+  const addFavoriteTeam = (userId, teamId) => {
+    console.log("addFavoriteTeam", userId, teamId);
+    return axios({
+      method: "POST",
+      url: "",
+      data: {
+        userId,
+        teamId
       }
     }).catch(error => console.log(error));
   };
@@ -101,7 +126,11 @@ const App = () => {
                 <Login login={login} />
               </Route>
               <Route path="/registration">
-                <Register register={register} />
+                <Register
+                  register={register}
+                  addTeam={addTeam}
+                  addFavoriteTeam={addFavoriteTeam}
+                />
               </Route>
               <Route path="/playball">
                 <Playball user={userInfo} players={playersInfo} />
