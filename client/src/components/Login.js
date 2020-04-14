@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import "./Login.scss";
 import axios from "axios";
 
@@ -77,6 +77,9 @@ export default function Login(props) {
               <input type="submit" value="Login" />
             </div>
           </form>
+          <Link to="/registration" className="header_link">
+            registration
+          </Link>
         </div>
       </main>
     </Fragment>
