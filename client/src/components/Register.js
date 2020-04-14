@@ -17,6 +17,9 @@ export default function Register(props) {
       .register(firstName, lastName, email, password)
       .then(response => setRedirectHome(true));
 
+    // props
+    //   .getUserIdTeamId(email, teamName)
+
     setFirstName("");
     setLastName("");
     setEmail("");

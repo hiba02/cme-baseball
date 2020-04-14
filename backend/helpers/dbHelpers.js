@@ -12,6 +12,20 @@ module.exports = knex => {
   };
 
   //get user Id - 4.13.20
+  const getUserIdByEmail = email => {
+    return knex
+      .select("id")
+      .from("users")
+      .where("users.email", "=", email);
+  };
+
+  //get team Id - 4.13.20
+  const getTeamIdByteamName = name => {
+    return knex
+      .select("id")
+      .from("teams")
+      .where("teams.name", "=", name);
+  };
 
   //get all players
   const getPlayers = () => {
@@ -125,6 +139,8 @@ module.exports = knex => {
     validateUserLogin,
     userLoginValidation,
     addTeam,
-    addFavoriteTeam
+    addFavoriteTeam,
+    getUserIdByEmail,
+    getTeamIdByteamName
   };
 };

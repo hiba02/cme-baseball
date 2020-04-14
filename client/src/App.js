@@ -52,7 +52,27 @@ const App = () => {
     }).catch(error => console.log(error));
   };
 
-  // 4.19.20: add userId and team id in favoriteTeam
+  //???????FIXIT  TypeError: Cannot read property 'then' of undefined
+  // 4.13.20: get user id and team id by email, team_name
+  const getUserIdTeamId = (email, team_name) => {
+    // return axios({
+    //   method: "GET",
+    //   url: "/api/users"
+    // }).then(result => {
+    //   console.log(result.data);
+    //   setWord(result.data[0].first_name);
+    // });
+    Promise.all([
+      axios.get(`/api/users/${email}`),
+      axios.get(`/api/teams/${team_name}`) // /api/watch_logs/:watch_log_id/log_entries
+    ]).then(res => {
+      console.log("Promise: ", res[0].data, res[1].data);
+      // setUserWatchLogs(res[0].data)
+      // setAllLogEntries(res[1].data)
+    });
+  };
+
+  // 4.13.20: add userId and team id in favoriteTeam
   const addFavoriteTeam = (userId, teamId) => {
     console.log("addFavoriteTeam", userId, teamId);
     return axios({
@@ -130,6 +150,7 @@ const App = () => {
                   register={register}
                   addTeam={addTeam}
                   addFavoriteTeam={addFavoriteTeam}
+                  getUserIdTeamId={getUserIdTeamId}
                 />
               </Route>
               <Route path="/playball">
@@ -137,11 +158,11 @@ const App = () => {
               </Route>
               <Route path="/">
                 {/* {!userInfo && <Slideshow />} */}
-                <Slideshow />
+                {/* <Slideshow /> */}
               </Route>
               <Route path="/:userId">
                 {/* {!userInfo && <Slideshow />} */}
-                <Slideshow />
+                {/* <Slideshow /> */}
               </Route>
             </Switch>
           </section>
