@@ -7,16 +7,16 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex("teams").insert([
         {
-          name: "Sharks"
+          name: "Sharks",
+          user_id: 1
         },
         {
-          name: "Padres"
+          name: "Padres",
+          user_id: 1
         },
         {
-          name: "Padres"
-        },
-        {
-          name: "Expos"
+          name: "Expos",
+          user_id: 2
         }
       ]);
     })

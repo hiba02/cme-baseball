@@ -4,6 +4,11 @@ exports.up = function(knex) {
       .primary()
       .unsigned();
     t.string("name");
+    t.integer("user_id")
+      .references("id")
+      .inTable("users")
+      .notNull()
+      .onDelete("cascade");
     t.timestamps(true, true);
   });
 };
