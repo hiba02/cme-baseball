@@ -28,7 +28,7 @@ export default function Register(props) {
 
   return (
     <Fragment>
-      {redirectHome && <Redirect to="/" />}
+      {redirectHome && <Redirect to="/createTeam" />}
       <div className="register-container">
         <form onSubmit={handleSubmit}>
           <div className="register-title">Registration</div>

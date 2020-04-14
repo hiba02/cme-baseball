@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
-
+import CreateTeam from "./components/CreateTeam.js";
 const App = () => {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState("");
@@ -85,7 +85,19 @@ const App = () => {
     }).catch(error => console.log(error));
   };
 
+  // get UserInfo from user id
   const getUserInfo = userId => {
+    return axios({
+      method: "GET",
+      url: `/api/users/${userId}`
+    }).then(result => {
+      console.log("App getUserInfo", result.data[0]);
+      setUserInfo(result.data[0]);
+    });
+  };
+
+  // get userId from user email
+  const getUserIdByuserEmail = userEmail => {
     return axios({
       method: "GET",
       url: `/api/users/${userId}`
@@ -148,6 +160,13 @@ const App = () => {
               <Route path="/registration">
                 <Register
                   register={register}
+                  addTeam={addTeam}
+                  addFavoriteTeam={addFavoriteTeam}
+                  getUserIdTeamId={getUserIdTeamId}
+                />
+              </Route>
+              <Route path="/createTeam">
+                <CreateTeam
                   addTeam={addTeam}
                   addFavoriteTeam={addFavoriteTeam}
                   getUserIdTeamId={getUserIdTeamId}

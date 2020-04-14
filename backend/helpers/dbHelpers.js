@@ -11,7 +11,7 @@ module.exports = knex => {
       .where("users.id", "=", id);
   };
 
-  //get user Id - 4.13.20
+  //get user Id by user email- 4.13.20
   const getUserIdByEmail = email => {
     return knex
       .select("id")
@@ -56,7 +56,7 @@ module.exports = knex => {
     );
   };
 
-  //rabbithole
+  //registration for user information
   const registerUser = function(first_name, last_name, email, password) {
     console.log("dbhelper: ", first_name, last_name, email, password);
     return knex("users")
@@ -69,18 +69,6 @@ module.exports = knex => {
       .returning("*")
       .then(res => res[0]);
     // will return the id for login / cookie session
-  };
-
-  //rabbithole
-  const validateUserLogin = function(email, password) {
-    return knex("users")
-      .select("*")
-      .where({
-        email: email,
-        password: password
-      })
-      .then(res => res[0])
-      .catch(e => "There was an error logging in");
   };
 
   //new login validation 4.9.20
@@ -117,7 +105,7 @@ module.exports = knex => {
       .then(res => res[0]);
   };
 
-  //4.19.20: add userId and teamId when registration
+  //4.19.20: add userId and teamId
   const addFavoriteTeam = function(userId, teamId) {
     console.log("dbhelper addFavoriteTeam: ", userId, teamId);
     return knex("favorite_teams")
@@ -129,14 +117,26 @@ module.exports = knex => {
       .then(res => res[0]);
   };
 
+  //rabbithole
+  // const validateUserLogin = function(email, password) {
+  //   return knex("users")
+  //     .select("*")
+  //     .where({
+  //       email: email,
+  //       password: password
+  //     })
+  //     .then(res => res[0])
+  //     .catch(e => "There was an error logging in");
+  // };
+
   return {
+    // validateUserLogin,
     getUsers,
     getUserInfo,
     getPlayers,
     getPlayersFromSameTeam,
     getPlayersFromUserId,
     registerUser,
-    validateUserLogin,
     userLoginValidation,
     addTeam,
     addFavoriteTeam,
