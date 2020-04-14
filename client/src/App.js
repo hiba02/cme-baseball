@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
 import CreateTeam from "./components/CreateTeam.js";
+import Test from "./components/Test.js";
 const App = () => {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState("");
@@ -50,6 +51,17 @@ const App = () => {
         teamName
       }
     }).catch(error => console.log(error));
+  };
+
+  // get user infomation by user email /email/:email - 4.20.20
+  const getUserInfoByEmail = email => {
+    return axios({
+      method: "GET",
+      url: `/api/users/email/${email}`
+    }).then(result => {
+      console.log(result.data);
+      setWord(result.data[0].email);
+    });
   };
 
   //???????FIXIT  TypeError: Cannot read property 'then' of undefined
@@ -117,7 +129,7 @@ const App = () => {
     });
   };
 
-  const login = (email, password) => {
+  const loginValidation = (email, password) => {
     console.log("App.js login", email, password);
     return axios({
       method: "POST",
@@ -155,7 +167,7 @@ const App = () => {
           <section>
             <Switch>
               <Route path="/login">
-                <Login login={login} />
+                <Login login={loginValidation} getUserInfo={getUserInfo} />
               </Route>
               <Route path="/registration">
                 <Register
@@ -168,18 +180,16 @@ const App = () => {
               <Route path="/createTeam">
                 <CreateTeam
                   addTeam={addTeam}
+                  currentUserInfo={userInfo}
                   addFavoriteTeam={addFavoriteTeam}
                   getUserIdTeamId={getUserIdTeamId}
+                  getUserInfoByEmail={getUserInfoByEmail}
                 />
               </Route>
               <Route path="/playball">
                 <Playball user={userInfo} players={playersInfo} />
               </Route>
               <Route path="/">
-                {/* {!userInfo && <Slideshow />} */}
-                {/* <Slideshow /> */}
-              </Route>
-              <Route path="/:userId">
                 {/* {!userInfo && <Slideshow />} */}
                 {/* <Slideshow /> */}
               </Route>

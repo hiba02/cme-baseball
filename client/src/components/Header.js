@@ -20,7 +20,7 @@ export default function Header(props) {
               </Link>
             </div>
             {/* header title */}
-            <div class="header_title">
+            <div className="header_title">
               <h1>CBME Baseball</h1>
               <br />
               <br />
@@ -29,11 +29,11 @@ export default function Header(props) {
               </Link>
             </div>
             {/* header icons */}
-            <div class="header_icon">
+            <div className="header_icon">
               <ul>
                 <li>
                   <a href="#">
-                    <i class="fa fa-html5" aria-hidden="true"></i>
+                    <i className="fa fa-html5" aria-hidden="true"></i>
                     <span>HTML5</span>
                   </a>
                 </li>
@@ -42,19 +42,19 @@ export default function Header(props) {
                     target="_blank"
                     href="https://github.com/hiba02/cme-baseball"
                   >
-                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <i className="fa fa-github" aria-hidden="true"></i>
                     <span>Github</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    <i className="fa fa-facebook-square" aria-hidden="true"></i>
                     <span>Facebook</span>
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i className="fa fa-twitter" aria-hidden="true"></i>
                     <span>twitter</span>
                   </a>
                 </li>

@@ -3,17 +3,16 @@ import { Redirect, Link } from "react-router-dom";
 import "./Login.scss";
 import axios from "axios";
 
-export default function Login(props) {
+const Login = ({ login, getUserInfo }) => {
   const [userId, setUserId] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
 
   const handleLogin = function(event) {
-    console.log("Login", props);
     event.preventDefault();
-    // login(email, password);
-    props.login(email, password).then(data => {
+    // props.loginValidation login(email, password);
+    login(email, password).then(data => {
       // setRedirectHome(true);
       console.log("Login.js data", data);
       // });
@@ -47,7 +46,7 @@ export default function Login(props) {
   return (
     <Fragment>
       {/* {redirectHome && <Redirect to="/" />} */}
-      {redirectHome && <Redirect to={`/${userId}`} />}
+      {redirectHome && <Redirect to={`/`} />}
       <main>
         <div className="login-container">
           <form className="login-form" onSubmit={handleLogin}>
@@ -84,4 +83,6 @@ export default function Login(props) {
       </main>
     </Fragment>
   );
-}
+};
+
+export default Login;

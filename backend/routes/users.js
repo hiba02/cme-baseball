@@ -5,9 +5,9 @@ module.exports = ({
   getUsers,
   getUserInfo,
   registerUser,
-  validateUserLogin,
+  // validateUserLogin,
   userLoginValidation,
-  getUserIdByEmail
+  getUserInfoByEmail
 }) => {
   router.get("/", function(req, res) {
     getUsers()
@@ -57,7 +57,7 @@ module.exports = ({
   // get userId by email 4.13.20
   router.get("/email/:email", function(req, res) {
     console.log("/:email", req.params.email);
-    getUserIdByEmail(req.params.email).then(result => res.json(result));
+    getUserInfoByEmail(req.params.email).then(result => res.json(result));
   });
 
   return router;

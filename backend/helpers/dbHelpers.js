@@ -11,10 +11,10 @@ module.exports = knex => {
       .where("users.id", "=", id);
   };
 
-  //get user Id by user email- 4.13.20
-  const getUserIdByEmail = email => {
+  //get user infomation by user email- 4.13.20
+  const getUserInfoByEmail = email => {
     return knex
-      .select("id")
+      .select("id", "first_name", "last_name", "email")
       .from("users")
       .where("users.email", "=", email);
   };
@@ -140,7 +140,7 @@ module.exports = knex => {
     userLoginValidation,
     addTeam,
     addFavoriteTeam,
-    getUserIdByEmail,
+    getUserInfoByEmail,
     getTeamIdByteamName
   };
 };

@@ -1,16 +1,22 @@
 import React, { useState, Fragment } from "react";
 import { Redirect } from "react-router-dom";
 
-const CreateTeam = props => {
+const CreateTeam = ({ addTeam, currentUserInfo }) => {
   const [teamName, setTeamName] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
 
+  console.log("CreateTeam currentUserInfo: ", currentUserInfo);
+  console.log(
+    "CreateTeam currentUserInfo.id: ",
+    currentUserInfo ? currentUserInfo.id : ""
+  );
+
   const handleSubmit = e => {
     e.preventDefault();
-    props.addTeam(teamName);
-    props
-      .register(firstName, lastName, email, password)
-      .then(response => setRedirectHome(true));
+    addTeam(teamName).then(response => setRedirectHome(true));
+    // props
+    //   .register(firstName, lastName, email, password)
+    //   .then(response => setRedirectHome(true));
 
     // props
     //   .getUserIdTeamId(email, teamName)
@@ -19,9 +25,12 @@ const CreateTeam = props => {
 
   return (
     <Fragment>
+      <p>userInfo:{currentUserInfo ? currentUserInfo.first_name : ""}</p>
+
       {redirectHome && <Redirect to="/" />}
       <div className="createTeam-container">
         <form onSubmit={handleSubmit}>
+          {/* <form> */}
           <div className="createTeam-title">Create Team</div>
           <div className="createTeam-firstName">
             Name:
@@ -29,7 +38,7 @@ const CreateTeam = props => {
               type="text"
               placeholder="Team name"
               value={teamName}
-              onChange={e => setFirstName(e.target.value)}
+              onChange={e => setTeamName(e.target.value)}
             />
           </div>
           <div className="createTeam-submit">

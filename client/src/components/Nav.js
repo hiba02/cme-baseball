@@ -18,37 +18,37 @@ const Nav = props => {
   return (
     <article className="Nav_component">
       <div className="menu">
-        <p class="col_desc">Hello, {userFirstName}</p>
-        <h4 class="col_title">Menu</h4>
+        <p className="col_desc">Hello, {userFirstName}</p>
+        <h4 className="col_title">Menu</h4>
         <ul>
           <li>
-            <a href="#">
+            <Link to="/createTeam" className="menu_link">
               Create team{" "}
-              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            </a>
+              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+            </Link>
           </li>
           <li>
             <a href="#">
               Team Roster{" "}
-              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
             </a>
           </li>
           <li>
             <a href="#">
               New Player{" "}
-              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
             </a>
           </li>
           <li>
             <a href="#">
               Line Up{" "}
-              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
             </a>
           </li>
           <li>
             <Link to="/playball" className="menu_link">
               Play ball{" "}
-              <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
             </Link>
           </li>
         </ul>
