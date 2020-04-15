@@ -20,31 +20,38 @@ const Nav = props => {
       <div className="menu">
         <p className="col_desc">Hello, {userFirstName}</p>
         <h4 className="col_title">Menu</h4>
+
+        {props.userInfo ? (
+          <ul>
+            <li>
+              <Link to="/createTeam" className="menu_link">
+                Create team{" "}
+                <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+              </Link>
+            </li>
+            <li>
+              <Link to="/showTeam" className="menu_link">
+                Show Team{" "}
+                <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+              </Link>
+            </li>
+            <li>
+              <a href="#">
+                New Player{" "}
+                <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Team Roster{" "}
+                <i className="fa fa-angle-double-right" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        ) : (
+          ""
+        )}
         <ul>
-          <li>
-            <Link to="/createTeam" className="menu_link">
-              Create team{" "}
-              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-            </Link>
-          </li>
-          <li>
-            <Link to="/showTeam" className="menu_link">
-              Show Team{" "}
-              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-            </Link>
-          </li>
-          <li>
-            <a href="#">
-              New Player{" "}
-              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              Line Up{" "}
-              <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-            </a>
-          </li>
           <li>
             <Link to="/playball" className="menu_link">
               Play ball{" "}

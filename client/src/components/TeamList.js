@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom";
 const TeamList = ({ team }) => {
   console.log("TeamList team", team);
   return (
-    <div>
-      <li>{team.name}</li>
+    <div className="teamList_body">
+      <li className="teamList_name">{team.name}</li>
     </div>
   );
 };

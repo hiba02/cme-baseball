@@ -1,7 +1,12 @@
 import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect } from "react-router-dom";
 
-const CreateTeam = ({ addTeam, currentUserInfo, curretnUserId }) => {
+const CreateTeam = ({
+  addTeam,
+  currentUserInfo,
+  curretnUserId,
+  addTeamInClient
+}) => {
   const [teamName, setTeamName] = useState("");
   // const [userId, setUserId] = useState("");
   const [redirectHome, setRedirectHome] = useState(false);
@@ -19,6 +24,7 @@ const CreateTeam = ({ addTeam, currentUserInfo, curretnUserId }) => {
       e.preventDefault();
       addTeam(teamName, curretnUserId).then(response => setRedirectHome(true));
       setTeamName("");
+      addTeamInClient(teamName, curretnUserId);
     },
     [addTeam, teamName]
   );

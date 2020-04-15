@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.scss";
 import axios from "axios";
@@ -19,6 +19,8 @@ const App = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
   const [teamNames, setTeamNames] = useState(null);
+  const nextId = useRef(100);
+
   const test = () => {
     return axios({
       method: "GET",
@@ -44,17 +46,42 @@ const App = () => {
   };
 
   // 4.19.20: registration: user informatoin in server
+  // ## added .then for current created team
   const addTeam = (teamName, userId) => {
     console.log("addTeam", teamName);
-    return axios({
-      method: "POST",
-      url: "api/teams/addTeam",
-      data: {
-        teamName,
-        userId
-      }
-    }).catch(error => console.log(error));
+    return (
+      axios({
+        method: "POST",
+        url: "api/teams/addTeam",
+        data: {
+          teamName,
+          userId
+        }
+      })
+        // .then((teamName, userId) => {
+        //   const team = {
+        //     id: userId + 100,
+        //     name: teamName,
+        //     user_id: userId
+        //   };
+        //   setTeamNames(teamNames.concat(team));
+        // })
+        .catch(error => console.log(error))
+    );
   };
+
+  const addTeamInClient = useCallback(
+    (teamName, userId) => {
+      const team = {
+        id: nextId.current,
+        name: teamName,
+        user_id: userId
+      };
+      setTeamNames(teamNames.concat(team));
+      nextId.current += 1;
+    },
+    [teamNames]
+  );
 
   // get user infomation by user email /email/:email - 4.20.20
   const getUserInfoByEmail = email => {
@@ -212,6 +239,7 @@ const App = () => {
                   addFavoriteTeam={addFavoriteTeam}
                   getUserIdTeamId={getUserIdTeamId}
                   getUserInfoByEmail={getUserInfoByEmail}
+                  addTeamInClient={addTeamInClient}
                 />
               </Route>
               <Route path="/showTeam">
