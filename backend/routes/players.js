@@ -5,7 +5,8 @@ module.exports = ({
   getPlayers,
   getPlayersFromSameTeam,
   getPlayersFromUserId,
-  getPlayersByUserId
+  getPlayersByUserId,
+  addNewPlayers
 }) => {
   router.get("/", function(req, res) {
     getPlayers()
@@ -37,6 +38,19 @@ module.exports = ({
         res.json(result);
       })
       .catch(err => console.log(`Error retrieving data: ${err.message}`));
+  });
+
+  router.post("/newplayer", function(req, res) {
+    console.log("router: /newplayer", req.body, req.body);
+    const team_id = req.body.team_id;
+    const name = req.body.name;
+    const uniform_number = req.body.uniform_number;
+    const position = req.body.position;
+    const bats = req.body.bats;
+    const throws = req.body.throws;
+    addNewPlayers(team_id, name, uniform_number, position, bats, throws)
+      .then(response => res.json(response))
+      .catch(e => console.log(e));
   });
 
   return router;

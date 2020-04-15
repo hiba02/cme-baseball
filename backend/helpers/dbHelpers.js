@@ -141,6 +141,38 @@ module.exports = knex => {
       .then(res => res[0]);
   };
 
+  // 4.15.20 Insert new players
+  const addNewPlayers = function(
+    team_id,
+    name,
+    uniform_number,
+    position,
+    bats,
+    throws
+  ) {
+    console.log(
+      "addNewPlayers: ",
+      team_id,
+      name,
+      uniform_number,
+      position,
+      bats,
+      throws
+    );
+    return knex("players")
+      .insert({
+        team_id: team_id,
+        name: name,
+        uniform_number: uniform_number,
+        position: position,
+        bats: bats,
+        throws: throws
+      })
+      .returning("*")
+      .then(res => res[0]);
+    // will return the id for login / cookie session
+  };
+
   //rabbithole
   // const validateUserLogin = function(email, password) {
   //   return knex("users")
@@ -167,6 +199,7 @@ module.exports = knex => {
     getUserInfoByEmail,
     getTeamIdByteamName,
     getTeamNameByUserId,
-    getPlayersByUserId
+    getPlayersByUserId,
+    addNewPlayers
   };
 };
