@@ -18,6 +18,7 @@ const App = () => {
   const [userId, setUserId] = useState(0);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
+  const [teamNames, setTeamNames] = useState(null);
   const test = () => {
     return axios({
       method: "GET",
@@ -72,8 +73,8 @@ const App = () => {
       method: "GET",
       url: `/api/teams/getTeamName/${id}`
     }).then(result => {
-      console.log(result.data);
-      // setWord(result.data[0].email);
+      console.log("getTeamNameByUserId", result.data);
+      setTeamNames(result.data);
     });
   };
 
@@ -131,7 +132,7 @@ const App = () => {
       setUserInfo(result.data[0]);
     });
   };
-
+  // Old one no more use it - 4.14.20
   const getPlayersInfoByUserId = userId => {
     return axios({
       method: "GET",
@@ -168,6 +169,7 @@ const App = () => {
           getUserInfo(response.data.id);
           // getPlayersInfoByUserId(response.data.id);
           getPlayersByUserId(response.data.id);
+          getTeamNameByUserId(response.data.id);
           return response.data;
         } else {
           console.log("fail");
@@ -218,6 +220,7 @@ const App = () => {
                   currentUserInfo={userInfo}
                   curretnUserId={userId}
                   addFavoriteTeam={addFavoriteTeam}
+                  teamNames={teamNames}
                 />
               </Route>
               <Route path="/playball">

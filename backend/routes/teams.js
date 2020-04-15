@@ -13,8 +13,8 @@ module.exports = ({ addTeam, getTeamIdByteamName, getTeamNameByUserId }) => {
 
   // get team name by user id 4.14.20
   router.get("/getTeamName/:id", function(req, res) {
-    console.log("/:name", req.params.name);
-    getTeamNameByUserId(req.params.name).then(result => res.json(result));
+    console.log("/:name", req.params.id);
+    getTeamNameByUserId(req.params.id).then(result => res.json(result));
   });
 
   // get team id by name 4.13.20

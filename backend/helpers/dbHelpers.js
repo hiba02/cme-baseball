@@ -27,10 +27,10 @@ module.exports = knex => {
       .where("teams.name", "=", name);
   };
 
-  //get team names by user Id - 4.14.20
+  //get team names, id, user_id by user Id - 4.14.20
   const getTeamNameByUserId = id => {
     return knex
-      .select("name")
+      .select("id", "name", "user_id")
       .from("teams")
       .where("teams.user_id", "=", id);
   };
