@@ -12,7 +12,10 @@ import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
 import CreateTeam from "./components/CreateTeam.js";
 import ShowTeam from "./components/ShowTeam.js";
+import ShowRoster from "./components/ShowRoster.js";
+
 import Test from "./components/Test.js";
+
 const App = () => {
   const [word, setWord] = useState("");
   const [userId, setUserId] = useState(0);
@@ -138,6 +141,20 @@ const App = () => {
     }).catch(error => console.log(error));
   };
 
+  // 4.14.20: get roster players by team id
+  //getPlayersFromSameTeam
+
+  const getPlayersFromSameTeam = id => {
+    return axios({
+      method: "GET",
+      url: `/api/teams/${id}`
+    }).then(result => {
+      console.log("getTeamNameByUserId", result.data);
+      setTeamNames(result.data);
+      // setPlayersInfo()
+    });
+  };
+
   // get UserInfo from user id
   const getUserInfo = userId => {
     return axios({
@@ -177,6 +194,17 @@ const App = () => {
       url: `/api/players/players/${userId}`
     }).then(response => {
       // console.log("App getPlayersInfoByUserId", response.data);
+      setPlayersInfo(response.data);
+    });
+  };
+
+  // 4.14.20: get players by team id
+  const getPlayersByteamId = teamId => {
+    return axios({
+      method: "GET",
+      url: `/api/players/${teamId}`
+    }).then(response => {
+      console.log("App getPlayersByteamId", response.data);
       setPlayersInfo(response.data);
     });
   };
@@ -249,7 +277,12 @@ const App = () => {
                   curretnUserId={userId}
                   addFavoriteTeam={addFavoriteTeam}
                   teamNames={teamNames}
+                  getPlayersFromSameTeam={getPlayersFromSameTeam}
+                  getPlayersByteamId={getPlayersByteamId}
                 />
+              </Route>
+              <Route path="/showRoster">
+                <ShowRoster />
               </Route>
               <Route path="/playball">
                 <Playball user={userInfo} players={playersInfo} />
