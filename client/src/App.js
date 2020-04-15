@@ -10,9 +10,10 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
-import CreateTeam from "./components/CreateTeam.js";
-import ShowTeam from "./components/ShowTeam.js";
-import ShowRoster from "./components/ShowRoster.js";
+import CreateTeam from "./components/CreateTeam";
+import ShowTeam from "./components/ShowTeam";
+import ShowRoster from "./components/ShowRoster";
+import CreatePlayer from "./components/CreatePlayer";
 
 import Test from "./components/Test.js";
 
@@ -72,7 +73,7 @@ const App = () => {
         .catch(error => console.log(error))
     );
   };
-
+  //4.14.20 for CreateTeam.js handleSubmit
   const addTeamInClient = useCallback(
     (teamName, userId) => {
       const team = {
@@ -280,6 +281,9 @@ const App = () => {
                   getPlayersFromSameTeam={getPlayersFromSameTeam}
                   getPlayersByteamId={getPlayersByteamId}
                 />
+              </Route>
+              <Route path="/createPlayer">
+                <CreatePlayer />
               </Route>
               <Route path="/showRoster">
                 <ShowRoster />

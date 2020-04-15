@@ -36,10 +36,10 @@ const Nav = props => {
               </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/createPlayer" className="menu_link">
                 New Player{" "}
                 <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#">

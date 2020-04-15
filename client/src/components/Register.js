@@ -66,7 +66,7 @@ export default function Register(props) {
           <div className="register-password">
             password:
             <input
-              type="text"
+              type="password"
               placeholder="password"
               value={password}
               onChange={e => setPassword(e.target.value)}

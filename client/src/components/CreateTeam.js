@@ -25,6 +25,7 @@ const CreateTeam = ({
       addTeam(teamName, curretnUserId).then(response => setRedirectHome(true));
       setTeamName("");
       addTeamInClient(teamName, curretnUserId);
+      // need to pass team id into CreatePlayer component
     },
     [addTeam, teamName]
   );
