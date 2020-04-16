@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css?family=Overpass");
+
+* {
+  box-sizing: border-box;
+}
+
+.showTeam-template {
+  font-family: Overpass, sans-serif;
+  margin: 3rem;
+
+  .showTeam-box {
+    background-color: lightblue;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    // justify-content: space-around;
+    // align-content: flex-start;
+    // align-items: flex-start;
+  }
+}

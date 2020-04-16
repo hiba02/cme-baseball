@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Redirect } from "react-router-dom";
 import TeamList from "./TeamList";
-
+import "./ShowTeam.scss";
 const ShowTeam = ({
   teamNames,
   getPlayersFromSameTeam,
@@ -10,9 +10,9 @@ const ShowTeam = ({
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
-    <div>
-      <p>Team Name</p>
-      <ul>
+    <div className="showTeam-template">
+      {/* <p>Team Name</p> */}
+      <article className="showTeam-box">
         {teamNames
           ? teamNames.map(team => (
               <TeamList
@@ -24,7 +24,7 @@ const ShowTeam = ({
               />
             ))
           : ""}
-      </ul>
+      </article>
     </div>
   );
 };
