@@ -12,7 +12,7 @@ import Slideshow from "./components/Slideshow";
 import Playball from "./components/Playball";
 import CreateTeam from "./components/CreateTeam";
 import ShowTeam from "./components/ShowTeam";
-import ShowRoster from "./components/ShowRoster";
+import ShowPlayers from "./components/ShowPlayers";
 import CreatePlayer from "./components/CreatePlayer";
 
 import Test from "./components/Test.js";
@@ -319,8 +319,12 @@ const App = () => {
               <Route path="/createPlayer">
                 <CreatePlayer addNewPlayers={addNewPlayers} teamId={teamId} />
               </Route>
-              <Route path="/showRoster">
-                <ShowRoster playersInfo={playersInfo} />
+              <Route path="/showPlayer">
+                <ShowPlayers
+                  user={userInfo}
+                  players={playersInfo}
+                  teamId={teamId}
+                />
               </Route>
               <Route path="/playball">
                 <Playball user={userInfo} players={playersInfo} />
