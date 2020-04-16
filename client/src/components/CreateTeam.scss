@@ -1,0 +1,77 @@
+.createTeam-container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 4px;
+  .createTeam-userInfo {
+    background: #82e0aa;
+    color: white;
+    height: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .createTeam-title {
+    background: #004d40;
+    color: white;
+    height: 4rem;
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .createTeam-content {
+    background: white;
+    .createTeam-insert {
+      display: flex;
+      background: #f7f9f9;
+      // padding: 0.5rem;
+      // font-size: 1.125rem;
+      // font-weight: bold;
+      // line-height: 1.5;
+      // padding: 0.5rem;
+      // font-size: 1.125rem;
+      // line-height: 1.5;
+      // color: black;
+      input {
+        // 기본 스타일 초기화
+        font-size: 1.5rem;
+        font-weight: bold;
+        background: none;
+        outline: none;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: black;
+        &::placeholder {
+          color: #2c3e50;
+        }
+        // 버튼을 제외한 영역을 모두 차지하기
+        flex: 1;
+      }
+      button {
+        // 기본 스타일 초기화
+        background: none;
+        outline: none;
+        border: none;
+        background: #ffee58;
+        color: white;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.1s background ease-in;
+        &:hover {
+          background: #adb5bd;
+        }
+      }
+    }
+  }
+}

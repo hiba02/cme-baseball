@@ -1,6 +1,7 @@
 import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect } from "react-router-dom";
-
+import { MdAdd } from "react-icons/md";
+import "./CreateTeam.scss";
 const CreateTeam = ({
   addTeam,
   currentUserInfo,
@@ -36,25 +37,30 @@ const CreateTeam = ({
 
   return (
     <Fragment>
-      <p>userInfo:{currentUserInfo ? currentUserInfo.first_name : ""}</p>
-
       {redirectHome && <Redirect to="/" />}
       <div className="createTeam-container">
         <form onSubmit={handleSubmit}>
           {/* <form> */}
+          <p className="createTeam-userInfo">
+            User Name: {currentUserInfo ? currentUserInfo.first_name : ""}
+          </p>
           <div className="createTeam-title">Create Team</div>
-          <div className="createTeam-firstName">
-            Name:
-            <input
-              type="text"
-              placeholder="Team name"
-              value={teamName}
-              // onChange={e => setTeamName(e.target.value)}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createTeam-submit">
-            <input type="submit" value="Submit" />
+          <div className="createTeam-content">
+            <div className="createTeam-insert">
+              <input
+                type="text"
+                placeholder="Team name"
+                value={teamName}
+                // onChange={e => setTeamName(e.target.value)}
+                onChange={onChange}
+              />
+              <button type="submit">
+                <MdAdd />
+              </button>
+            </div>
+            {/* <div className="createTeam-submit">
+              <input type="submit" value="Submit" />
+            </div> */}
           </div>
         </form>
       </div>
