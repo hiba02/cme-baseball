@@ -320,7 +320,7 @@ const App = () => {
                 <CreatePlayer addNewPlayers={addNewPlayers} teamId={teamId} />
               </Route>
               <Route path="/showRoster">
-                <ShowRoster />
+                <ShowRoster playersInfo={playersInfo} />
               </Route>
               <Route path="/playball">
                 <Playball user={userInfo} players={playersInfo} />
