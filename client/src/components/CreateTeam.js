@@ -12,7 +12,7 @@ const CreateTeam = ({
   const [redirectHome, setRedirectHome] = useState(false);
 
   console.log("CreateTeam currentUserInfo: ", currentUserInfo);
-  console.log("CreateTeam currentUserId.id: ", curretnUserId);
+  console.log("CreateTeam current teamId: ", curretnUserId);
   // let userId = 1;
   const userId = useRef(1);
   if (currentUserInfo) {

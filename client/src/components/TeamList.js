@@ -1,17 +1,19 @@
 import React, { useState, useCallback } from "react";
 import { Redirect, Link } from "react-router-dom";
 
-const TeamList = ({ team, getPlayersFromSameTeam, getPlayersByteamId }) => {
+const TeamList = ({
+  team,
+  getPlayersFromSameTeam,
+  getPlayersByteamId,
+  setTeamId
+}) => {
   const [redirect, setRedirect] = useState(false);
-  console.log(
-    "TeamList team getPlayersFromSameTeam",
-    team,
-    getPlayersFromSameTeam
-  );
+  console.log("TeamList team getPlayersFromSameTeam", team);
   const { id, name } = team;
   const moveAndShowTeamRoster = id => {
     // getPlayersFromSameTeam(id);
     getPlayersByteamId(id);
+    setTeamId(id);
     setRedirect(true);
   };
 

@@ -41,7 +41,7 @@ module.exports = ({
   });
 
   router.post("/newplayer", function(req, res) {
-    console.log("router: /newplayer", req.body, req.body);
+    console.log("router: /newplayer", req.body);
     const team_id = req.body.team_id;
     const name = req.body.name;
     const uniform_number = req.body.uniform_number;

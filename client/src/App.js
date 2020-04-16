@@ -19,10 +19,11 @@ import Test from "./components/Test.js";
 
 const App = () => {
   const [word, setWord] = useState("");
-  const [userId, setUserId] = useState(0);
+  const [userId, setUserId] = useState(1);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
   const [teamNames, setTeamNames] = useState(null);
+  const [teamId, setTeamId] = useState(1);
   const nextId = useRef(100);
 
   const test = () => {
@@ -235,6 +236,38 @@ const App = () => {
       .catch(error => console.log(error));
   };
 
+  // add players -4.15.20
+  const addNewPlayers = (
+    team_id,
+    name,
+    uniform_number,
+    position,
+    bats,
+    throws
+  ) => {
+    console.log(
+      "addNewPlayers",
+      team_id,
+      name,
+      uniform_number,
+      position,
+      bats,
+      throws
+    );
+    return axios({
+      method: "POST",
+      url: "api/players/newplayer",
+      data: {
+        team_id,
+        name,
+        uniform_number,
+        position,
+        bats,
+        throws
+      }
+    }).catch(error => console.log(error));
+  };
+
   return (
     <div className="app-body">
       {/* <button onClick={test}>TEST axios</button>
@@ -280,10 +313,11 @@ const App = () => {
                   teamNames={teamNames}
                   getPlayersFromSameTeam={getPlayersFromSameTeam}
                   getPlayersByteamId={getPlayersByteamId}
+                  setTeamId={setTeamId}
                 />
               </Route>
               <Route path="/createPlayer">
-                <CreatePlayer />
+                <CreatePlayer addNewPlayers={addNewPlayers} teamId={teamId} />
               </Route>
               <Route path="/showRoster">
                 <ShowRoster />

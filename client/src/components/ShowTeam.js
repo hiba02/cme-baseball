@@ -5,7 +5,8 @@ import TeamList from "./TeamList";
 const ShowTeam = ({
   teamNames,
   getPlayersFromSameTeam,
-  getPlayersByteamId
+  getPlayersByteamId,
+  setTeamId
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
@@ -19,6 +20,7 @@ const ShowTeam = ({
                 team={team}
                 getPlayersFromSameTeam={getPlayersFromSameTeam}
                 getPlayersByteamId={getPlayersByteamId}
+                setTeamId={setTeamId}
               />
             ))
           : ""}
