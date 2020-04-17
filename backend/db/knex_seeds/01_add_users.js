@@ -19,10 +19,10 @@ exports.seed = function(knex) {
           password: "test"
         },
         {
-          first_name: "Luis",
-          last_name: "Pantino",
-          email: "lppp@pad.com",
-          password: "test"
+          first_name: "Chicken",
+          last_name: "Fried",
+          email: "a",
+          password: "a"
         },
         {
           first_name: "Taylor",

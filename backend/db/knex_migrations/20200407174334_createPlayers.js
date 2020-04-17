@@ -13,6 +13,7 @@ exports.up = function(knex) {
     t.string("position");
     t.string("bats");
     t.string("throws");
+    t.boolean("check");
     t.timestamps(true, true);
   });
 };

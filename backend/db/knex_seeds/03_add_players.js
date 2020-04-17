@@ -12,7 +12,8 @@ exports.seed = function(knex) {
           uniform_number: "99",
           position: "P",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -20,7 +21,8 @@ exports.seed = function(knex) {
           uniform_number: "18",
           position: "C",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -28,7 +30,8 @@ exports.seed = function(knex) {
           uniform_number: "30",
           position: "1B",
           bats: "L",
-          throws: "L"
+          throws: "L",
+          check: false
         },
         {
           team_id: 1,
@@ -36,7 +39,8 @@ exports.seed = function(knex) {
           uniform_number: "05",
           position: "2B",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -44,7 +48,8 @@ exports.seed = function(knex) {
           uniform_number: "27",
           position: "3B",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -52,7 +57,8 @@ exports.seed = function(knex) {
           uniform_number: "09",
           position: "SS",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -60,7 +66,8 @@ exports.seed = function(knex) {
           uniform_number: "04",
           position: "RF",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,
@@ -76,7 +83,8 @@ exports.seed = function(knex) {
           uniform_number: "22",
           position: "CF",
           bats: "L",
-          throws: "L"
+          throws: "L",
+          check: false
         },
         {
           team_id: 2,
@@ -84,7 +92,8 @@ exports.seed = function(knex) {
           uniform_number: "33",
           position: "P",
           bats: "L",
-          throws: "L"
+          throws: "L",
+          check: false
         },
         {
           team_id: 2,
@@ -92,7 +101,8 @@ exports.seed = function(knex) {
           uniform_number: "15",
           position: "C",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -100,7 +110,8 @@ exports.seed = function(knex) {
           uniform_number: "13",
           position: "1B",
           bats: "L",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -108,7 +119,8 @@ exports.seed = function(knex) {
           uniform_number: "09",
           position: "2B",
           bats: "L",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -116,7 +128,8 @@ exports.seed = function(knex) {
           uniform_number: "10",
           position: "3B",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -124,7 +137,8 @@ exports.seed = function(knex) {
           uniform_number: "05",
           position: "SS",
           bats: "L",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -132,7 +146,8 @@ exports.seed = function(knex) {
           uniform_number: "03",
           position: "LF",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -140,7 +155,8 @@ exports.seed = function(knex) {
           uniform_number: "11",
           position: "CF",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 2,
@@ -148,7 +164,89 @@ exports.seed = function(knex) {
           uniform_number: "35",
           position: "RF",
           bats: "L",
-          throws: "L"
+          throws: "L",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "Y Tibon",
+          uniform_number: "88",
+          position: "3B",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "R Uribe",
+          uniform_number: "21",
+          position: "RF",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "B Lake",
+          uniform_number: "33",
+          position: "P",
+          bats: "L",
+          throws: "L",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "A Kennedy",
+          uniform_number: "08",
+          position: "C",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "C Castillo",
+          uniform_number: "02",
+          position: "1B",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "G Rudy",
+          uniform_number: "63",
+          position: "2B",
+          bats: "L",
+          throws: "L",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "Z Brad",
+          uniform_number: "34",
+          position: "SS",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "C Taylor",
+          uniform_number: "12",
+          position: "CF",
+          bats: "R",
+          throws: "R",
+          check: false
+        },
+        {
+          team_id: 3,
+          name: "U Buddy",
+          uniform_number: "55",
+          position: "LF",
+          bats: "R",
+          throws: "R",
+          check: false
         }
       ]);
     })

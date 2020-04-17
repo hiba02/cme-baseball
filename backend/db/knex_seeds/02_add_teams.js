@@ -17,6 +17,10 @@ exports.seed = function(knex) {
         {
           name: "Expos",
           user_id: 2
+        },
+        {
+          name: "Giants",
+          user_id: 3
         }
       ]);
     })
