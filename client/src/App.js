@@ -24,6 +24,7 @@ const App = () => {
   const [playersInfo, setPlayersInfo] = useState(null);
   const [teamNames, setTeamNames] = useState(null);
   const [teamId, setTeamId] = useState(1);
+  const [pitcher, setPitcher] = useState(null);
   const nextId = useRef(100);
 
   const test = () => {
@@ -197,7 +198,17 @@ const App = () => {
     }).then(response => {
       // console.log("App getPlayersInfoByUserId", response.data);
       setPlayersInfo(response.data);
+      //4.17.20
+      getPitcherFromPlayerInfo(response.data);
     });
+  };
+
+  //4.17.20: filter pitcher from players info
+  const getPitcherFromPlayerInfo = playersInfo => {
+    if (playersInfo) {
+      setPitcher(playersInfo.filter(p => p.position === "P"));
+      console.log("getPitcherFromPlayerInfo", pitcher);
+    }
   };
 
   // 4.14.20: get players by team id
@@ -327,7 +338,11 @@ const App = () => {
                 />
               </Route>
               <Route path="/playball">
-                <Playball user={userInfo} players={playersInfo} />
+                <Playball
+                  user={userInfo}
+                  players={playersInfo}
+                  pitcher={pitcher}
+                />
               </Route>
               <Route path="/">
                 {/* {!userInfo && <Slideshow />} */}

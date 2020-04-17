@@ -1,5 +1,5 @@
 import React from "react";
-import "./Roster.scss";
+import "./PlayballTop.scss";
 
 const PlayballTop = ({ player, number }) => {
   const {
@@ -19,17 +19,15 @@ const PlayballTop = ({ player, number }) => {
     throws
   } = player;
 
-  console.log("Roster number: ", number);
+  console.log("PlayballTop position: ", position);
 
   return (
-    <div className="roster_body">
-      <span className="id">{number}</span>
-      <span className="name">
-        {name},#{uniform_number}
-      </span>
-      {/* <span className="uniform_number">{uniform_number}</span> */}
-      <span className="position">{position}</span>
-    </div>
+    <article className="playball-top-body">
+      <div className="playball-top-ballCount"></div>
+      <div className="playball-top-atBat"></div>
+      <div className="playball-top-pitcher"></div>
+      <div className="playball-top-bottom"></div>
+    </article>
   );
 };
 

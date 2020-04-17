@@ -2,50 +2,50 @@
   margin: 0;
   padding: 0;
 }
-
-.playball_wrap {
-  width: 100%;
-  margin: 0 auto;
-}
-.playball_header {
-  width: 100%;
-  height: 100px;
-  // background: #9575cd;
-}
-
+// .playball-top-body {
+//   width: 1000px;
+//   height: 900px;
+//   margin: 0 auto;
+//   font-size: 40px;
+//   color: #fff;
+//   text-align: center;
+//   text-transform: uppercase;
+// }
+// .playball_wrap {
+//   width: 100%;
+//   margin: 0 auto;
+// }
+// .playball_header {
+//   width: 100%;
+//   height: 100px;
+//   background: #9575cd;
+// }
 .playball-top-ballCount {
   float: left;
   width: 40%;
-  height: 80px;
+  // height: 550px;
   background: #ccc234;
 }
 
 .playball-top-atBat {
   float: left;
   width: 30%;
-  height: 80px;
+  // height: 550px;
   background: #8b8526;
 }
 
 .playball-top-pitcher {
   float: left;
   width: 30%;
-  height: 80px;
+  // height: 550px;
   background: #837d2c;
 }
 
 .playball-top-bottom {
   clear: both;
   width: 100%;
-  height: 20px;
+  // height: 550px;
   background: #3a3713;
-}
-
-.playball_aside {
-  float: left;
-  width: 35%;
-  height: 550px;
-  background: #f1f8e9;
 }
 
 .roster_template {
