@@ -79,12 +79,12 @@ export default function Register(props) {
               />
             </div>
           </div>
-        </form>
-        <div className="register-button">
-          <Link to="/registration" className="registration-link">
+          <div className="register-button">
+            {/* <Link to="/" className="registration-link"> */}
             <input type="submit" value="Submit" />
-          </Link>
-        </div>
+            {/* </Link> */}
+          </div>
+        </form>
       </div>
     </Fragment>
   );

@@ -2,6 +2,7 @@ import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect } from "react-router-dom";
 import { MdAdd } from "react-icons/md";
 import "./CreateTeam.scss";
+
 const CreateTeam = ({
   addTeam,
   currentUserInfo,

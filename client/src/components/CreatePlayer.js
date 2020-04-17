@@ -1,5 +1,6 @@
 import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect, Link } from "react-router-dom";
+import "./CreatePlayer.scss";
 
 const CreatePlayer = ({ addNewPlayers, teamId }) => {
   // need to get team-id!!
@@ -59,77 +60,82 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
 
       {redirectHome && <Redirect to="/" />}
       <div className="createPlayer-container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="createPlayer-form">
           {/* <form> */}
-          <div className="createPlayer-title">Create Team</div>
-          <div className="createPlayer-team_id">
-            <input
-              name="team_id"
-              type="hidden"
-              value={team_id}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createPlayer-name">
-            Name:
-            <input
-              name="name"
-              type="text"
-              placeholder="Player name"
-              value={name}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createPlayer-uniform_number">
-            Uniform number:
-            <input
-              name="uniform_number"
-              type="text"
-              placeholder="Uniform_number"
-              value={uniform_number}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createPlayer-position">
-            Position:
-            <input
-              name="position"
-              type="text"
-              placeholder="Player position"
-              value={position}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createPlayer-bats">
-            Bats:
-            <input
-              name="bats"
-              type="text"
-              placeholder="Bats"
-              value={bats}
-              onChange={onChange}
-            />
-          </div>
-          <div className="createPlayer-throws">
-            Throws:
-            <input
-              name="throws"
-              type="text"
-              placeholder="Throws"
-              value={throws}
-              onChange={onChange}
-            />
+          <div className="createPlayer-title">CREATE NEW PLAYER</div>
+
+          <div className="createPlayer-content">
+            <div className="createPlayer-team_id">
+              <input
+                name="team_id"
+                type="hidden"
+                value={team_id}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="createPlayer-name">
+              <input
+                name="name"
+                type="text"
+                placeholder="Player name"
+                value={name}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="createPlayer-uniform_number">
+              <input
+                name="uniform_number"
+                type="text"
+                placeholder="Uniform_number"
+                value={uniform_number}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="createPlayer-position">
+              <input
+                name="position"
+                type="text"
+                placeholder="Player position"
+                value={position}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="createPlayer-bats">
+              <input
+                name="bats"
+                type="text"
+                placeholder="Bats"
+                value={bats}
+                onChange={onChange}
+              />
+            </div>
+            <div className="createPlayer-throws">
+              <input
+                name="throws"
+                type="text"
+                placeholder="Throws"
+                value={throws}
+                onChange={onChange}
+              />
+            </div>
           </div>
           <div className="createPlayer-submit">
             <input type="submit" value="Submit" />
           </div>
-          <button onClick={onReset}>초기화</button>
+          <div className="createPlayer-reset">
+            <button onClick={onReset}>Reset</button>
+          </div>
         </form>
       </div>
-      <Link to="/showTeam" className="menu_link">
-        Show Team{" "}
-        <i className="fa fa-angle-double-right" aria-hidden="true"></i>
-      </Link>
+      <div className="createPlayer-button">
+        <Link to="/showTeam" className="createPlayer-showTeam">
+          Show Team
+        </Link>
+      </div>
     </Fragment>
   );
 };

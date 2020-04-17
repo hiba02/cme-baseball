@@ -74,7 +74,7 @@ const Login = ({ login, getUserInfo }) => {
                 />
               </div>
               {/* </div> */}
-              <div class="login-footer">
+              <div className="login-footer">
                 {/* <div className="login-submit">
                 <input type="submit" value="Login" />
               </div> */}
