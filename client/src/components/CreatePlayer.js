@@ -127,7 +127,7 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
             <input type="submit" value="Submit" />
           </div>
           <div className="createPlayer-reset">
-            <button onClick={onReset}>Reset</button>
+            <div onClick={onReset}>Reset</div>
           </div>
         </form>
       </div>

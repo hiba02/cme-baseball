@@ -81,7 +81,7 @@ fieldset {
   background-color: rgb(168, 36, 36);
   border: none;
   border-radius: 10px;
-  color: white;
+  // color: white;
   padding: 12px 32px;
   text-decoration: none;
   // margin: 4px 2px;
@@ -98,9 +98,9 @@ fieldset {
   &:hover {
     background-color: rgb(81, 81, 231);
   }
-  button {
+  div {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 }
@@ -110,23 +110,23 @@ input[type="submit"] {
   // margin-left: 30px;
 }
 
-.register-firstName {
-  background: #f8f9fad7;
-  border-bottom: 1px solid gray;
-}
-.register-lastName {
-  border-bottom: 1px solid gray;
-}
-.register-email {
-  background: #f8f9fad7;
-  border-bottom: 1px solid gray;
-}
-.register-password {
-  border-bottom: 1px solid gray;
-}
-.register-addTeam {
-  background: #f8f9fad7;
-}
+// .register-firstName {
+//   background: #f8f9fad7;
+//   border-bottom: 1px solid gray;
+// }
+// .register-lastName {
+//   border-bottom: 1px solid gray;
+// }
+// .register-email {
+//   background: #f8f9fad7;
+//   border-bottom: 1px solid gray;
+// }
+// .register-password {
+//   border-bottom: 1px solid gray;
+// }
+// .register-addTeam {
+//   background: #f8f9fad7;
+// }
 
 .createPlayer-button {
   background-color: rgb(7, 7, 83);
