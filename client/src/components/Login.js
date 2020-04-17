@@ -49,17 +49,17 @@ const Login = ({ login, getUserInfo }) => {
       {redirectHome && <Redirect to={`/`} />}
       <main>
         <div className="login-container">
-          <form className="login_form" onSubmit={handleLogin}>
+          <form className="login-form" onSubmit={handleLogin}>
             {/* <legend className="ir_su"> LOG IN </legend> */}
             {/* <div className="login_header"> */}
             <div className="login-title">LOG IN</div>
             {/* </div> */}
-            <div className="login_content">
+            <div className="login-content">
               {/* <form className="login_form" onSubmit={handleLogin}> */}
               <div className="login-email">
                 <input
                   type="text"
-                  placeholder="email"
+                  placeholder="Type your email"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                 />
@@ -74,7 +74,7 @@ const Login = ({ login, getUserInfo }) => {
                 />
               </div>
               {/* </div> */}
-              <div class="login_footer">
+              <div class="login-footer">
                 {/* <div className="login-submit">
                 <input type="submit" value="Login" />
               </div> */}
@@ -82,11 +82,11 @@ const Login = ({ login, getUserInfo }) => {
               {/* </form> */}
             </div>
             <div className="buttons">
-              <button className="login_button" type="submit">
+              <button className="login-button" type="submit">
                 login
               </button>
-              <button className="registration_button">
-                <Link to="/registration" className="header_link">
+              <button className="registration-button">
+                <Link to="/registration" className="header-link">
                   registration
                 </Link>
               </button>

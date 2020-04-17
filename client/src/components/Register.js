@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
-import { Redirect } from "react-router-dom";
-// import "./Register.scss";
+import { Redirect, Link } from "react-router-dom";
+import "./Register.scss";
 
 export default function Register(props) {
   const [firstName, setFirstName] = useState("");
@@ -30,64 +30,61 @@ export default function Register(props) {
     <Fragment>
       {redirectHome && <Redirect to="/createTeam" />}
       <div className="register-container">
-        <form onSubmit={handleSubmit}>
-          <div className="register-title">Registration</div>
-          <div className="empty"></div>
-          <div className="register-firstName">
-            First Name:
-            <input
-              type="text"
-              placeholder="first name"
-              value={firstName}
-              onChange={e => setFirstName(e.target.value)}
-            />
-          </div>
-          <div className="empty"></div>
-          <div className="register-lastName">
-            Last Name:
-            <input
-              type="text"
-              placeholder="last Name"
-              value={lastName}
-              onChange={e => setLastName(e.target.value)}
-            />
-          </div>
-          <div className="empty"></div>
-          <div className="register-email">
-            Email:
-            <input
-              type="text"
-              placeholder="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="empty"></div>
-          <div className="register-password">
-            password:
-            <input
-              type="password"
-              placeholder="password"
-              value={password}
-              onChange={e => setPassword(e.target.value)}
-            />
-          </div>
+        <form onSubmit={handleSubmit} className="register-form">
+          <div className="register-title">REGISTRATION</div>
 
-          <div className="empty"></div>
-          <div className="register-addTeam">
-            Team Name:
-            <input
-              type="text"
-              placeholder="team name"
-              value={teamName}
-              onChange={e => setTeamName(e.target.value)}
-            />
-          </div>
-          <div className="empty"></div>
-          <div className="register-submit">
-            <input type="submit" value="Submit" />
+          <div className="register-content">
+            <div className="register-firstName">
+              <input
+                type="text"
+                placeholder="First name"
+                value={firstName}
+                onChange={e => setFirstName(e.target.value)}
+              />
+            </div>
+
+            <div className="register-lastName">
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={lastName}
+                onChange={e => setLastName(e.target.value)}
+              />
+            </div>
+
+            <div className="register-email">
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className="register-password">
+              <input
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+            </div>
+
+            <div className="register-addTeam">
+              <input
+                type="text"
+                placeholder="Team name"
+                value={teamName}
+                onChange={e => setTeamName(e.target.value)}
+              />
+            </div>
           </div>
         </form>
+        <div className="register-button">
+          <Link to="/registration" className="registration-link">
+            <input type="submit" value="Submit" />
+          </Link>
+        </div>
       </div>
     </Fragment>
   );
