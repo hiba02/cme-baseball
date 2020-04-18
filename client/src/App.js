@@ -24,7 +24,11 @@ const App = () => {
   const [playersInfo, setPlayersInfo] = useState(null);
   const [teamNames, setTeamNames] = useState(null);
   const [teamId, setTeamId] = useState(1);
-  const [pitcher, setPitcher] = useState(null);
+  const [pitcher, setPitcher] = useState({
+    name: "A Aron",
+    uniform_number: "35",
+    position: "RF"
+  });
   const nextId = useRef(100);
 
   const test = () => {
@@ -206,7 +210,7 @@ const App = () => {
   //4.17.20: filter pitcher from players info
   const getPitcherFromPlayerInfo = playersInfo => {
     if (playersInfo) {
-      setPitcher(playersInfo.filter(p => p.position === "P"));
+      setPitcher(playersInfo.filter(p => p.position === "P")[0]);
       console.log("getPitcherFromPlayerInfo", pitcher);
     }
   };

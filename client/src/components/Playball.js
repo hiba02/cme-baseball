@@ -6,37 +6,19 @@ import PlayballTopPitcher from "./PlayballTopPitcher";
 import "./Playball.scss";
 
 const Playball = ({ user, players, pitcher }) => {
-  // const [pitcher, setPitcher] = useState(null);
-
-  console.log("Palyball component pitcher: ", pitcher);
+  console.log("Palyball component pitcher: ", pitcher.name);
   console.log("Palyball component user: ", players);
   let rostNumber = 0;
   let positionNumber = 0;
+  // const { name, uniform_number, position, bats, throws, check } = pitcher;
   // if (players) {
-  //   setPitcher(
+  //   console.log(
+  //     "playball players:  ",
   //     players.filter(player => {
-  //       return player.position === "P";
+  //       return player.position === "P"; // no return -> error
   //     })
   //   );
-  //   console.log("Playball pitcher: ", pitcher);
   // }
-
-  // const currentPlayer = () => {
-  //   setPitcher(
-  //     players.filter(player => {
-  //       player.position === "P";
-  //     })
-  //   );
-  // };
-
-  if (players) {
-    console.log(
-      "playball players:  ",
-      players.filter(player => {
-        return player.position === "P"; // no return -> error
-      })
-    );
-  }
   //Expected an assignment or function call and instead saw an expression  no-unused-expressions
 
   return (
@@ -46,7 +28,10 @@ const Playball = ({ user, players, pitcher }) => {
           <article className="playball-top-body">
             <div className="playball-top-ballCount"></div>
             <div className="playball-top-atBat"></div>
-            <div className="playball-top-pitcher"></div>
+            <div className="playball-top-pitcher">
+              {pitcher ? <PlayballTopPitcher pitcher={pitcher} /> : ""}
+              {/* {pitcher ? <p>{name}</p> : ""} */}
+            </div>
             <div className="playball-top-bottom"></div>
           </article>
           {/* {players &&

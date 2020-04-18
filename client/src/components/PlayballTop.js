@@ -1,25 +1,14 @@
 import React from "react";
 import "./PlayballTop.scss";
 
-const PlayballTop = ({ player, number }) => {
-  const {
-    id,
-    first_name,
-    last_name,
-    email,
-    password,
-    created_at,
-    updated_at,
-    user_id,
-    team_id,
-    name,
+const PlayballTop = ({ pitcherName, uniform_number, position, throws }) => {
+  console.log(
+    "PlayballTop : ",
+    pitcherName,
     uniform_number,
     position,
-    bats,
-    throws
-  } = player;
-
-  console.log("PlayballTop position: ", position);
+    position
+  );
 
   return (
     <article className="playball-top-body">
