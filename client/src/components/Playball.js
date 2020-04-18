@@ -5,9 +5,17 @@ import PlayballTopHitter from "./PlayballTopHitter";
 import PlayballTopPitcher from "./PlayballTopPitcher";
 import "./Playball.scss";
 
-const Playball = ({ user, players, pitcher }) => {
-  console.log("Palyball component pitcher: ", pitcher.name);
-  console.log("Palyball component user: ", players);
+const Playball = ({
+  user,
+  players,
+  pitcher,
+  hitter,
+  getHitterFromPlayerInfo
+}) => {
+  // players ? console.log("Palyball component pitcher: ", pitcher.name) : "";
+  console.log("Palyball component players: ", players);
+
+  hitter ? console.log("hitter", hitter) : console.log("nothing");
   let rostNumber = 0;
   let positionNumber = 0;
   // const { name, uniform_number, position, bats, throws, check } = pitcher;
@@ -28,7 +36,7 @@ const Playball = ({ user, players, pitcher }) => {
           <article className="playball-top-body">
             <div className="playball-top-ballCount"></div>
             <div className="playball-top-atBat">
-              {players ? <PlayballTopHitter players={players} /> : ""}
+              {players ? <PlayballTopHitter hitter={hitter} /> : ""}
             </div>
             <div className="playball-top-pitcher">
               {pitcher ? <PlayballTopPitcher pitcher={pitcher} /> : ""}
@@ -57,6 +65,7 @@ const Playball = ({ user, players, pitcher }) => {
                     player={player}
                     key={player.id}
                     number={(rostNumber = rostNumber + 1)}
+                    getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                   />
                 ))}
             </div>

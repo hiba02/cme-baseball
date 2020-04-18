@@ -1,8 +1,12 @@
 import React, { useState, Children } from "react";
 import "./PlayballTopHitter.scss";
 import hitterLogo from "../img/hitter-logo.png";
-const PlayballTopHitter = ({ players }) => {
-  console.log("PlayballTopHitter players: ", players);
+const PlayballTopHitter = ({ hitter }) => {
+  hitter
+    ? console.log("PlayballTopHitter players: ", hitter)
+    : console.log("nothing");
+
+  const { id, name, uniform_number, position, bats, throws, check } = hitter;
   return (
     <div className="PlayballTopHitter-container">
       <span className="PlayballTopHitter-icon">
@@ -12,10 +16,10 @@ const PlayballTopHitter = ({ players }) => {
       </span>
       <span className="PlayballTopHitter-content">
         <div className="PlayballTopHitter-name">
-          {/* {name}, #{uniform_number} */}
+          {name}, #{uniform_number}
         </div>
       </span>
-      <span className="PlayballHitter-pitch">Pitch: </span>
+      <span className="PlayballHitter-batting">Batting: 0-0</span>
     </div>
   );
 };

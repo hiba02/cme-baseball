@@ -29,6 +29,11 @@ const App = () => {
     uniform_number: "35",
     position: "RF"
   });
+  const [hitter, setHitter] = useState({
+    name: "A Aron",
+    uniform_number: "35",
+    position: "RF"
+  });
   const nextId = useRef(100);
 
   const test = () => {
@@ -215,6 +220,14 @@ const App = () => {
     }
   };
 
+  //4.17.20: filter hitter from players info
+  const getHitterFromPlayerInfo = id => {
+    if (playersInfo) {
+      setHitter(playersInfo.filter(p => p.id === id)[0]);
+      console.log("pitcher:", hitter);
+    }
+  };
+
   // 4.14.20: get players by team id
   const getPlayersByteamId = teamId => {
     return axios({
@@ -353,6 +366,8 @@ const App = () => {
                   user={userInfo}
                   players={playersInfo}
                   pitcher={pitcher}
+                  hitter={hitter}
+                  getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                 />
               </Route>
               <Route path="/">
