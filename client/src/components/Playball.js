@@ -1,7 +1,7 @@
 import React, { useState, Children } from "react";
 import Roster from "./Roster";
 import FieldPosition from "./FieldPosition";
-import PlayballTop from "./PlayballTop";
+import PlayballTopHitter from "./PlayballTopHitter";
 import PlayballTopPitcher from "./PlayballTopPitcher";
 import "./Playball.scss";
 
@@ -27,7 +27,9 @@ const Playball = ({ user, players, pitcher }) => {
         <header className="playball_header">
           <article className="playball-top-body">
             <div className="playball-top-ballCount"></div>
-            <div className="playball-top-atBat"></div>
+            <div className="playball-top-atBat">
+              {players ? <PlayballTopHitter players={players} /> : ""}
+            </div>
             <div className="playball-top-pitcher">
               {pitcher ? <PlayballTopPitcher pitcher={pitcher} /> : ""}
               {/* {pitcher ? <p>{name}</p> : ""} */}

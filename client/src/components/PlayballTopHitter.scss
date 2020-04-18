@@ -1,4 +1,4 @@
-.PlayballTopPitcher-container {
+.PlayballTopHitter-container {
   width: 85%;
   height: 60px;
   border: solid darkslategray 2px;
@@ -13,7 +13,7 @@
   flex-direction: row;
   // align-items: center; // 세로 중앙 정렬
   // justify-content: ;
-  .PlayballTopPitcher-icon {
+  .PlayballTopHitter-icon {
     // cursor: pointer;
     // flex: 1; // 차지할 수 있는 영역 모두 차지
     display: flex;
@@ -23,7 +23,7 @@
     height: 100%;
     flex: 2;
     ////
-    .PlayballTopPitcher_img {
+    .PlayballTopHitter_img {
       border-radius: 50%;
       background: white;
       width: 45px;
@@ -38,14 +38,14 @@
       height: 28px;
     }
   }
-  .PlayballTopPitcher-content {
+  .PlayballTopHitter-content {
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
     flex: 3;
   }
-  .PlayballTopPitcher-pitch {
+  .PlayballHitter-pitch {
     display: flex;
     align-items: center;
     justify-content: center;
