@@ -63,6 +63,14 @@ const Playball = ({
     }
   };
 
+  const resetCount = () => {
+    setInning(1);
+    setTopBottom(true);
+    setStrike(0);
+    setBall(0);
+    setOut(0);
+  };
+
   players
     ? console.log("Palyball component players: ", players)
     : console.log("");
@@ -106,7 +114,15 @@ const Playball = ({
               {pitcher ? <PlayballTopPitcher pitcher={pitcher} /> : ""}
               {/* {pitcher ? <p>{name}</p> : ""} */}
             </div>
-            <div className="playball-top-bottom"></div>
+            <div className="playball-top-bottom">
+              <button
+                onClick={() => {
+                  resetCount();
+                }}
+              >
+                RESET
+              </button>
+            </div>
           </article>
         </header>
         <aside className="playball_aside">
