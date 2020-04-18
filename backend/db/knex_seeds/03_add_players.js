@@ -75,7 +75,8 @@ exports.seed = function(knex) {
           uniform_number: "28",
           position: "LF",
           bats: "R",
-          throws: "R"
+          throws: "R",
+          check: false
         },
         {
           team_id: 1,

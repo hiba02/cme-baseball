@@ -48,7 +48,8 @@ module.exports = ({
     const position = req.body.position;
     const bats = req.body.bats;
     const throws = req.body.throws;
-    addNewPlayers(team_id, name, uniform_number, position, bats, throws)
+    const check = req.body.check;
+    addNewPlayers(team_id, name, uniform_number, position, bats, throws, check)
       .then(response => res.json(response))
       .catch(e => console.log(e));
   });

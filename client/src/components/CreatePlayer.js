@@ -12,10 +12,19 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
     uniform_number: "",
     position: "",
     bats: "",
-    throws: ""
+    throws: "",
+    check: false
   });
 
-  const { team_id, name, uniform_number, position, bats, throws } = inputs;
+  const {
+    team_id,
+    name,
+    uniform_number,
+    position,
+    bats,
+    throws,
+    check
+  } = inputs;
 
   const onChange = e => {
     const { value, name } = e.target; //e.target -> name and value
@@ -34,21 +43,31 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
       uniform_number: "",
       position: "",
       bats: "",
-      throws: ""
+      throws: "",
+      check: false
     });
   };
 
   const handleSubmit = useCallback(
     e => {
       e.preventDefault();
-      addNewPlayers(teamId, name, uniform_number, position, bats, throws);
+      addNewPlayers(
+        teamId,
+        name,
+        uniform_number,
+        position,
+        bats,
+        throws,
+        check
+      );
       setInputs({
         team_id: 1,
         name: "",
         uniform_number: "",
         position: "",
         bats: "",
-        throws: ""
+        throws: "",
+        check: false
       });
     },
     [inputs]
@@ -119,6 +138,15 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
                 type="text"
                 placeholder="Throws"
                 value={throws}
+                onChange={onChange}
+              />
+            </div>
+
+            <div className="createPlayer-check">
+              <input
+                name="check"
+                type="hidden"
+                value={check}
                 onChange={onChange}
               />
             </div>

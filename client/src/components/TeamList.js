@@ -6,11 +6,13 @@ const TeamList = ({
   team,
   getPlayersFromSameTeam,
   getPlayersByteamId,
-  setTeamId
+  setTeamId,
+  setPlayersInfo
 }) => {
   const [redirect, setRedirect] = useState(false);
   console.log("TeamList team getPlayersFromSameTeam", team);
   const { id, name } = team;
+
   const moveAndShowTeamRoster = id => {
     // getPlayersFromSameTeam(id);
     getPlayersByteamId(id);

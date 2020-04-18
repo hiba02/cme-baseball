@@ -6,7 +6,8 @@ const ShowTeam = ({
   teamNames,
   getPlayersFromSameTeam,
   getPlayersByteamId,
-  setTeamId
+  setTeamId,
+  setPlayersInfo
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
@@ -21,6 +22,7 @@ const ShowTeam = ({
                 getPlayersFromSameTeam={getPlayersFromSameTeam}
                 getPlayersByteamId={getPlayersByteamId}
                 setTeamId={setTeamId}
+                setPlayersInfo={setPlayersInfo}
               />
             ))
           : ""}

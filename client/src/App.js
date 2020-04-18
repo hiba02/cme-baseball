@@ -223,6 +223,9 @@ const App = () => {
     }).then(response => {
       console.log("App getPlayersByteamId", response.data);
       setPlayersInfo(response.data);
+      //4.17.20: change team -> change pitcher
+      // getPitcherFromPlayerInfo(response.data);
+      setPitcher(response.data.filter(p => p.position === "P")[0]);
     });
   };
 
@@ -258,7 +261,8 @@ const App = () => {
     uniform_number,
     position,
     bats,
-    throws
+    throws,
+    check
   ) => {
     console.log(
       "addNewPlayers",
@@ -267,7 +271,8 @@ const App = () => {
       uniform_number,
       position,
       bats,
-      throws
+      throws,
+      check
     );
     return axios({
       method: "POST",
@@ -278,7 +283,8 @@ const App = () => {
         uniform_number,
         position,
         bats,
-        throws
+        throws,
+        check
       }
     }).catch(error => console.log(error));
   };
@@ -329,6 +335,7 @@ const App = () => {
                   getPlayersFromSameTeam={getPlayersFromSameTeam}
                   getPlayersByteamId={getPlayersByteamId}
                   setTeamId={setTeamId}
+                  setPlayersInfo={setPlayersInfo}
                 />
               </Route>
               <Route path="/createPlayer">

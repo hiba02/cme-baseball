@@ -148,7 +148,8 @@ module.exports = knex => {
     uniform_number,
     position,
     bats,
-    throws
+    throws,
+    check
   ) {
     console.log(
       "addNewPlayers: ",
@@ -157,7 +158,8 @@ module.exports = knex => {
       uniform_number,
       position,
       bats,
-      throws
+      throws,
+      check
     );
     return knex("players")
       .insert({
@@ -166,7 +168,8 @@ module.exports = knex => {
         uniform_number: uniform_number,
         position: position,
         bats: bats,
-        throws: throws
+        throws: throws,
+        check: check
       })
       .returning("*")
       .then(res => res[0]);
