@@ -3,6 +3,7 @@ import Roster from "./Roster";
 import FieldPosition from "./FieldPosition";
 import PlayballTopHitter from "./PlayballTopHitter";
 import PlayballTopPitcher from "./PlayballTopPitcher";
+import PlayballTopBallCount from "./PlayballTopBallCount";
 import "./Playball.scss";
 
 const Playball = ({
@@ -12,8 +13,59 @@ const Playball = ({
   hitter,
   getHitterFromPlayerInfo
 }) => {
-  // players ? console.log("Palyball component pitcher: ", pitcher.name) : "";
-  console.log("Palyball component players: ", players);
+  const [inning, setInning] = useState(1);
+  const [topBottom, setTopBottom] = useState(true);
+  const [strike, setStrike] = useState(0);
+  const [ball, setBall] = useState(0);
+  const [out, setOut] = useState(0);
+
+  const countInning = () => {
+    // event.preventDefault();
+    if (inning >= 9) {
+      setInning(1);
+      setTopBottom(true);
+    } else {
+      if (topBottom) {
+        setTopBottom(false);
+      } else {
+        setInning(inning + 1);
+        setTopBottom(true);
+      }
+    }
+  };
+
+  const countStrike = () => {
+    // event.preventDefault();
+    if (strike >= 2) {
+      setStrike(0);
+      countOut();
+    } else {
+      setStrike(strike + 1);
+    }
+  };
+
+  const countBall = () => {
+    // event.preventDefault();
+    if (ball >= 3) {
+      setBall(0);
+    } else {
+      setBall(ball + 1);
+    }
+  };
+
+  const countOut = () => {
+    // event.preventDefault();
+    if (out >= 2) {
+      setOut(0);
+      countInning();
+    } else {
+      setOut(out + 1);
+    }
+  };
+
+  players
+    ? console.log("Palyball component players: ", players)
+    : console.log("");
 
   hitter ? console.log("hitter", hitter) : console.log("nothing");
   let rostNumber = 0;
@@ -34,7 +86,19 @@ const Playball = ({
       <div className="playball_wrap">
         <header className="playball_header">
           <article className="playball-top-body">
-            <div className="playball-top-ballCount"></div>
+            <div className="playball-top-ballCount">
+              <PlayballTopBallCount
+                strike={strike}
+                countStrike={countStrike}
+                ball={ball}
+                countBall={countBall}
+                out={out}
+                countOut={countOut}
+                inning={inning}
+                countInning={countInning}
+                topBottom={topBottom}
+              />
+            </div>
             <div className="playball-top-atBat">
               {players ? <PlayballTopHitter hitter={hitter} /> : ""}
             </div>
@@ -44,15 +108,6 @@ const Playball = ({
             </div>
             <div className="playball-top-bottom"></div>
           </article>
-          {/* {players &&
-            players.map(player => (
-              <PlayballTop
-                user={user}
-                player={player}
-                key={player.id}
-                number={(rostNumber = rostNumber + 1)}
-              />
-            ))} */}
         </header>
         <aside className="playball_aside">
           <div className="roster_template">
