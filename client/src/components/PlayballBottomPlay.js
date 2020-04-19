@@ -31,7 +31,8 @@ const PlayballBottomPlay = ({
   tripleHit,
   homerunHit,
   batterOut,
-  activePlayWindow
+  activePlayWindow,
+  addHittingNumber
 }) => {
   return (
     <div className="PlayballBottomPlay-container">
@@ -48,6 +49,7 @@ const PlayballBottomPlay = ({
         onClick={() => {
           singleHit();
           activePlayWindow();
+          addHittingNumber();
         }}
       >
         <span className="PlayballBottomPlay-icon">
@@ -62,6 +64,7 @@ const PlayballBottomPlay = ({
         onClick={() => {
           doubleHit();
           activePlayWindow();
+          addHittingNumber();
         }}
       >
         <span className="PlayballBottomPlay-icon">
@@ -77,6 +80,7 @@ const PlayballBottomPlay = ({
         onClick={() => {
           tripleHit();
           activePlayWindow();
+          addHittingNumber();
         }}
       >
         <span className="PlayballBottomPlay-icon">
@@ -91,6 +95,7 @@ const PlayballBottomPlay = ({
         onClick={() => {
           homerunHit();
           activePlayWindow();
+          addHittingNumber();
         }}
       >
         <span className="PlayballBottomPlay-icon">

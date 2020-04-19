@@ -1,7 +1,8 @@
 import React, { useState, Children } from "react";
 import "./PlayballTopPitcher.scss";
 import pitcherLogo from "../img/pitcher-logo.png";
-const PlayballTopPitcher = ({ pitureName, pitcher }) => {
+
+const PlayballTopPitcher = ({ pitureName, pitcher, pitchNum }) => {
   const { id, name, uniform_number, position, bats, throws, check } = pitcher;
   console.log("PlayballTopPitcher uniform_number", uniform_number);
   return (
@@ -16,7 +17,7 @@ const PlayballTopPitcher = ({ pitureName, pitcher }) => {
           {name}, #{uniform_number}
         </div>
       </span>
-      <span className="PlayballTopPitcher-pitch">Pitch: {id}</span>
+      <span className="PlayballTopPitcher-pitch">Pitch: {pitchNum}</span>
     </div>
   );
 };

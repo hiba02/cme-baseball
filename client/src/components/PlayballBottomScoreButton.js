@@ -6,12 +6,37 @@ import "./PlayballBottomScoreButton.scss";
 // import {} from "react-icons/io";
 import cn from "classnames";
 
-const PlayballBottomScoreButton = () => {
+const PlayballBottomScoreButton = ({
+  addOneScore,
+  resetScore,
+  addOneScoreAway,
+  resetHittingNumber,
+  resetPitchNumber
+}) => {
   return (
     <div className="PlayballBottomScoreButton-container">
-      <span className="PlayballBottomScoreButton-reset">RESET</span>
-      <span className="PlayballBottomScoreButton-home">HOME +</span>
-      <span className="PlayballBottomScoreButton-away">AWAY +</span>
+      <span
+        onClick={() => {
+          resetScore();
+          resetPitchNumber();
+          resetHittingNumber();
+        }}
+        className="PlayballBottomScoreButton-reset"
+      >
+        RESET
+      </span>
+      <span
+        className="PlayballBottomScoreButton-home"
+        onClick={() => addOneScore()}
+      >
+        HOME +
+      </span>
+      <span
+        className="PlayballBottomScoreButton-away"
+        onClick={() => addOneScoreAway()}
+      >
+        AWAY +
+      </span>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import "./PlayballBottomScore.scss";
 // import {} from "react-icons/io";
 import cn from "classnames";
 
-const PlayballBottomScore = ({ score }) => {
+const PlayballBottomScore = ({ score, scoreAway }) => {
   return (
     <div className="PlayballBottomScore-container">
       <span className="PlayballBottomScore-team">
@@ -15,7 +15,7 @@ const PlayballBottomScore = ({ score }) => {
       </span>
       <span className="PlayballBottomScore-team">
         <div className="PlayballBottomScore-team-away">AWAY</div>
-        <div className="PlayballBottomScore-team-score">0</div>
+        <div className="PlayballBottomScore-team-score">{scoreAway}</div>
       </span>
     </div>
   );

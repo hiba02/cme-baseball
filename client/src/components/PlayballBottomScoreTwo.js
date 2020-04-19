@@ -6,13 +6,15 @@ import "./PlayballBottomScoreTwo.scss";
 // import {} from "react-icons/io";
 import cn from "classnames";
 
-const PlayballBottomScoreTwo = () => {
+const PlayballBottomScoreTwo = ({ pitchNum, hittingNum }) => {
   return (
     <div className="PlayballBottomScoreTwo-container">
       <span className="PlayballBottomScoreTwo-htting">Hitting #</span>
-      <span className="PlayballBottomScoreTwo-hitting-number">0</span>
+      <span className="PlayballBottomScoreTwo-hitting-number">
+        {hittingNum}
+      </span>
       <span className="PlayballBottomScoreTwo-pitching">Pitching #</span>
-      <span className="PlayballBottomScoreTwo-pitching-number">0</span>
+      <span className="PlayballBottomScoreTwo-pitching-number">{pitchNum}</span>
     </div>
   );
 };

@@ -19,7 +19,8 @@ const PlayballBottomPitch = ({
   countBall,
   out,
   countOut,
-  activePlayWindow
+  activePlayWindow,
+  addPitchNumber
 }) => {
   return (
     <div className="PlayballBottomPitch-container">
@@ -29,7 +30,13 @@ const PlayballBottomPitch = ({
         </span>
         <span className="PlayballBottomPitch-order">&nbsp;&nbsp;PITCH</span>
       </div>
-      <div className="PlayballBottomPitch-ball" onClick={() => countBall()}>
+      <div
+        className="PlayballBottomPitch-ball"
+        onClick={() => {
+          countBall();
+          addPitchNumber();
+        }}
+      >
         <span className="PlayballBottomPitch-icon">
           <IoIosRadioButtonOn />
         </span>
@@ -37,7 +44,13 @@ const PlayballBottomPitch = ({
           &nbsp;&nbsp;&nbsp;&nbsp;Ball
         </span>
       </div>
-      <div className="PlayballBottomPitch-strike" onClick={() => countStrike()}>
+      <div
+        className="PlayballBottomPitch-strike"
+        onClick={() => {
+          countStrike();
+          addPitchNumber();
+        }}
+      >
         <span className="PlayballBottomPitch-icon">
           <IoIosRadioButtonOn />
         </span>
@@ -45,7 +58,10 @@ const PlayballBottomPitch = ({
       </div>
       <div
         className="PlayballBottomPitch-play"
-        onClick={() => activePlayWindow()}
+        onClick={() => {
+          activePlayWindow();
+          addPitchNumber();
+        }}
       >
         <span className="PlayballBottomPitch-icon">
           <IoMdAddCircle />

@@ -29,6 +29,9 @@ const Playball = ({
   const [_3b, set_3b] = useState(false);
   const [playWindow, setPlayWindow] = useState(false);
   const [score, setScore] = useState(0);
+  const [scoreAway, setScoreAway] = useState(0);
+  const [pitchNum, setPitchNum] = useState(0);
+  const [hittingNum, setHittinghNum] = useState(0);
   //count [countPitch, setCountPitch] = useState(0);
 
   const countInning = () => {
@@ -109,6 +112,31 @@ const Playball = ({
 
   const resetScore = () => {
     setScore(0);
+    setScoreAway(0);
+  };
+
+  const addOneScoreAway = () => {
+    setScoreAway(scoreAway + 1);
+  };
+
+  ////// pitch number //////
+
+  const addPitchNumber = () => {
+    setPitchNum(pitchNum + 1);
+  };
+
+  const resetPitchNumber = () => {
+    setPitchNum(0);
+  };
+
+  ////// hitting number //////
+
+  const addHittingNumber = () => {
+    setHittinghNum(hittingNum + 1);
+  };
+
+  const resetHittingNumber = () => {
+    setHittinghNum(0);
   };
 
   ///// Runner /////
@@ -407,7 +435,11 @@ const Playball = ({
               {players ? <PlayballTopHitter hitter={hitter} /> : ""}
             </div>
             <div className="playball-top-pitcher">
-              {pitcher ? <PlayballTopPitcher pitcher={pitcher} /> : ""}
+              {pitcher ? (
+                <PlayballTopPitcher pitcher={pitcher} pitchNum={pitchNum} />
+              ) : (
+                ""
+              )}
               {/* {pitcher ? <p>{name}</p> : ""} */}
             </div>
             <div className="playball-top-bottom">
@@ -472,6 +504,7 @@ const Playball = ({
               countInning={countInning}
               topBottom={topBottom}
               activePlayWindow={activePlayWindow}
+              addPitchNumber={addPitchNumber}
             />
           </div>
           <div className="playball-bottom-ballInPlay">
@@ -483,14 +516,24 @@ const Playball = ({
                 homerunHit={homerunHit}
                 batterOut={batterOut}
                 activePlayWindow={activePlayWindow}
+                addHittingNumber={addHittingNumber}
               />
             )}
           </div>
           <div className="playball-bottom-scoreboard">
             {/* <div className="playball-bottom-scoreboard-title">SCORE</div> */}
-            <PlayballBottomScore score={score} />
-            <PlayballBottomScoreTwo />
-            <PlayballBottomScoreButton />
+            <PlayballBottomScore score={score} scoreAway={scoreAway} />
+            <PlayballBottomScoreTwo
+              pitchNum={pitchNum}
+              hittingNum={hittingNum}
+            />
+            <PlayballBottomScoreButton
+              addOneScore={addOneScore}
+              resetScore={resetScore}
+              addOneScoreAway={addOneScoreAway}
+              resetPitchNumber={resetPitchNumber}
+              resetHittingNumber={resetHittingNumber}
+            />
           </div>
 
           <div className="playball-bottom-bar"></div>
