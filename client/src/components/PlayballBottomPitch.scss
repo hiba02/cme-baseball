@@ -1,0 +1,113 @@
+.PlayballBottomPitch-container {
+  width: 70%;
+  height: 180px;
+  border: solid darkslategray 2px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  .PlayballBottomPitch-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background: crimson;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: white;
+      padding-top: 5px;
+      margin-right: 20px;
+    }
+  }
+  .PlayballBottomPitch-ball {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: #3498db;
+      padding-top: 5px;
+      margin-right: 20px;
+    }
+  }
+  .PlayballBottomPitch-ball:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+
+  .PlayballBottomPitch-strike {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: red;
+      padding-top: 5px;
+      margin-right: 20px;
+    }
+  }
+
+  .PlayballBottomPitch-strike:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+
+  .PlayballBottomPitch-play {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: green;
+      padding-top: 5px;
+      margin-right: 20px;
+    }
+  }
+
+  .PlayballBottomPitch-play:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+}

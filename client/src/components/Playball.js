@@ -4,6 +4,7 @@ import FieldPosition from "./FieldPosition";
 import PlayballTopHitter from "./PlayballTopHitter";
 import PlayballTopPitcher from "./PlayballTopPitcher";
 import PlayballTopBallCount from "./PlayballTopBallCount";
+import PlayballBottomPitch from "./PlayballBottomPitch";
 import "./Playball.scss";
 
 const Playball = ({
@@ -18,7 +19,9 @@ const Playball = ({
   const [strike, setStrike] = useState(0);
   const [ball, setBall] = useState(0);
   const [out, setOut] = useState(0);
-
+  const [_1b, set_1b] = useState(false);
+  const [_2b, set_2b] = useState(false);
+  const [_3b, set_3b] = useState(false);
   const countInning = () => {
     // event.preventDefault();
     if (inning >= 9) {
@@ -78,16 +81,44 @@ const Playball = ({
   hitter ? console.log("hitter", hitter) : console.log("nothing");
   let rostNumber = 0;
   let positionNumber = 0;
-  // const { name, uniform_number, position, bats, throws, check } = pitcher;
-  // if (players) {
-  //   console.log(
-  //     "playball players:  ",
-  //     players.filter(player => {
-  //       return player.position === "P"; // no return -> error
-  //     })
-  //   );
-  // }
-  //Expected an assignment or function call and instead saw an expression  no-unused-expressions
+
+  /////////////////////////////////////////////
+
+  const baseRunnerCase = expr => {
+    switch (expr) {
+      case "_1B":
+        set_1b(true);
+        break;
+      case "_2B":
+        set_2b(true);
+        break;
+      case "_3B":
+        set_3b(true);
+        break;
+      case "_2B":
+        set_2b(true);
+        break;
+      case "_1B2B":
+        set_1b(true);
+        set_2b(true);
+        break;
+      case "_1B3B":
+        set_1b(true);
+        set_3b(true);
+        break;
+      case "_2B3B":
+        set_2b(true);
+        set_3b(true);
+        break;
+      case "_1B2B3B":
+        set_1b(true);
+        set_2b(true);
+        set_3b(true);
+        break;
+      default:
+        console.log("no value");
+    }
+  };
 
   return (
     <div className="playball_body">
@@ -156,8 +187,29 @@ const Playball = ({
                 </div>
               ))}
           </div>
+          {_1b && <span className="runner">runner</span>}
+          <div className="firstBase">1B</div>
+          <div className="secondBase">2B</div>
+          <div className="thirdBase">3B</div>
         </section>
-        <footer className="playball_footer"></footer>
+        <footer className="playball_footer">
+          <div className="playball-bottom-pitchAction">
+            <PlayballBottomPitch
+              strike={strike}
+              countStrike={countStrike}
+              ball={ball}
+              countBall={countBall}
+              out={out}
+              countOut={countOut}
+              inning={inning}
+              countInning={countInning}
+              topBottom={topBottom}
+            />
+          </div>
+          <div className="playball-bottom-ballInPlay"></div>
+          <div className="playball-bottom-runnerConrol"></div>
+          <div className="playball-bottom-bar"></div>
+        </footer>
       </div>
     </div>
   );
