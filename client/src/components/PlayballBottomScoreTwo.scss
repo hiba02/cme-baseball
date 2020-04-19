@@ -1,71 +1,46 @@
 .PlayballBottomScoreTwo-container {
   width: 90%;
-  height: 70px;
-  border: solid darkslategray 2px;
+  height: 50px;
+
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5px;
-  border-radius: 8px;
+  // margin-top: 5px;
+  border-radius: 0 0 8px 8px;
   overflow: hidden;
   background: #f8f9fa;
   padding: 0;
   display: flex;
   flex-direction: row;
-  // align-items: center;
-  // justify-content: ;
+
+  background: #2d3033;
+
   .PlayballBottomScoreTwo-htting {
-    // cursor: pointer;
-    // flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background: #aeb6bf;
+    // background: #2d3033;
     height: 100%;
-    flex: 5;
-    .PlayballBottomScore-team-home {
-      font-size: 0.5rem;
-    }
-    .PlayballBottomScore-team-score {
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .PlayballTopBallCount-count-inning {
-      svg {
-        font-size: 0.8rem;
-        color: #1e8449;
-      }
-      svg:hover {
-        font-size: 0.8rem;
-        color: #98c9ac;
-        cursor: pointer;
-      }
-    }
+    flex: 2;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(235, 235, 47);
   }
 
   ////////////////////////////
   .PlayballBottomScoreTwo-hitting-number {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    // background: white;
+    // background: #2d3033
     flex: 1;
-    .PlayballTopBallCount-show-topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #3498db;
-      }
-    }
-    .topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #e74c3c;
-      }
-    }
+    height: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(235, 235, 47);
   }
 
   .PlayballBottomScoreTwo-pitching {
@@ -73,186 +48,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background: white;
-    flex: 1;
-    .PlayballTopBallCount-show-topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #3498db;
-      }
-    }
-    .topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #e74c3c;
-      }
-    }
-  }
-
-  .PlayballBottomScoreTwo-pitching-number{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: white;
-    flex: 1;
-    .PlayballTopBallCount-show-topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #3498db;
-      }
-    }
-    .topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #e74c3c;
-      }
-    }
-  }
-
-
-  /////////////////////////////////////
-  .PlayballBottomScore-team {
-    // cursor: pointer;
-    // flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: #aeb6bf;
+    // background: rgb(12, 77, 6);
+    flex: 2;
     height: 100%;
-    flex: 5;
-    .PlayballBottomScore-team-home {
-      font-size: 0.5rem;
-    }
-    .PlayballBottomScore-team-score {
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .PlayballTopBallCount-count-inning {
-      svg {
-        font-size: 0.8rem;
-        color: #1e8449;
-      }
-      svg:hover {
-        font-size: 0.8rem;
-        color: #98c9ac;
-        cursor: pointer;
-      }
-    }
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(235, 235, 47);
   }
-  .PlayballTopBallCount-topBottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: white;
-    flex: 1;
-    .PlayballTopBallCount-show-topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #3498db;
-      }
-    }
-    .topBottom {
-      svg {
-        // 아이콘
-        font-size: 2rem;
-        color: #e74c3c;
-      }
-    }
-  }
-  ////////////////////////////////////////
-  .PlayballTopBallCount-strike {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: white;
-    flex: 2;
 
-    .PlayballTopBallCount-title-strike {
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-    .PlayballTopBallCount-show-strike {
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .PlayballTopBallCount-count-strike {
-      svg {
-        font-size: 0.8rem;
-        color: #1e8449;
-      }
-      svg:hover {
-        font-size: 0.8rem;
-        color: #98c9ac;
-        cursor: pointer;
-      }
-    }
-  }
-  .PlayballTopBallCount-ball {
+  .PlayballBottomScoreTwo-pitching-number {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    // background: white;
-    flex: 2;
-    .PlayballTopBallCount-title-ball {
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-    .PlayballTopBallCount-show-ball {
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .PlayballTopBallCount-count-ball {
-      svg {
-        font-size: 0.8rem;
-        color: #1e8449;
-      }
-      svg:hover {
-        font-size: 0.8rem;
-        color: #98c9ac;
-        cursor: pointer;
-      }
-    }
+    // background: burlywood;
+    flex: 1;
+    height: 100%;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(235, 235, 47);
   }
-  .PlayballTopBallCount-out {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // background: white;
-    flex: 2;
-    .PlayballTopBallCount-title-out {
-      font-size: 0.7rem;
-      font-weight: bold;
-    }
-    .PlayballTopBallCount-show-out {
-      font-family: "Source Sans Pro", sans-serif;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    .PlayballTopBallCount-count-out {
-      // margin-top: 3px;
-      svg {
-        font-size: 0.8rem;
-        color: #1e8449;
-      }
-      svg:hover {
-        font-size: 0.8rem;
-        color: #98c9ac;
-        cursor: pointer;
-      }
-    }
-  }
+
+  ////////////////////////////////////////
 }

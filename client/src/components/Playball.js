@@ -406,7 +406,7 @@ const Playball = ({
             )}
           </div>
           <div className="playball-bottom-scoreboard">
-            <div className="playball-bottom-scoreboard-title">SCORE</div>
+            {/* <div className="playball-bottom-scoreboard-title">SCORE</div> */}
             <PlayballBottomScore />
             <PlayballBottomScoreTwo />
           </div>

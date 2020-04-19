@@ -11,7 +11,7 @@ const PlayballBottomScore = () => {
     <div className="PlayballBottomScore-container">
       <span className="PlayballBottomScore-team">
         <div className="PlayballBottomScore-team-home">HOME</div>
-        <div className="PlayballBottomScore-team-score">0</div>
+        <div className="PlayballBottomScore-team-score">5</div>
       </span>
       <span className="PlayballBottomScore-team">
         <div className="PlayballBottomScore-team-away">AWAY</div>

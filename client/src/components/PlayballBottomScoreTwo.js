@@ -9,7 +9,7 @@ import cn from "classnames";
 const PlayballBottomScoreTwo = () => {
   return (
     <div className="PlayballBottomScoreTwo-container">
-      <span className="PlayballBottomScoreTwo-htting">H</span>
+      <span className="PlayballBottomScoreTwo-htting">Hitting #</span>
       <span className="PlayballBottomScoreTwo-hitting-number">0</span>
       <span className="PlayballBottomScoreTwo-pitching">Pitching #</span>
       <span className="PlayballBottomScoreTwo-pitching-number">0</span>
