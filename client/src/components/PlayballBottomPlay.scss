@@ -1,6 +1,6 @@
-.PlayballBottomPitch-container {
+.PlayballBottomPlay-container {
   width: 70%;
-  height: 180px;
+  height: 90%;
   border: solid darkslategray 2px;
   margin-left: auto;
   margin-right: auto;
@@ -11,7 +11,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  .PlayballBottomPitch-title {
+  .PlayballBottomPlay-title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -28,14 +28,40 @@
       font-size: 1.4rem;
       color: white;
       padding-top: 5px;
-      margin-right: 20px;
+      margin-right: 8px;
     }
   }
-  .PlayballBottomPitch-ball {
+  .PlayballBottomPlay-single {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: #3498db;
+      padding-top: 5px;
+      margin-right: 25px;
+    }
+  }
+  .PlayballBottomPlay-single:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+
+  .PlayballBottomPlay-double {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     height: 100%;
     flex: 1;
     font-family: "Source Sans Pro", sans-serif;
@@ -51,17 +77,69 @@
       margin-right: 20px;
     }
   }
-  .PlayballBottomPitch-ball:hover {
+  .PlayballBottomPlay-double:hover {
     background: #00ced1;
     cursor: pointer;
     color: white;
   }
 
-  .PlayballBottomPitch-strike {
+  .PlayballBottomPlay-triple {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: #3498db;
+      padding-top: 5px;
+      margin-right: 28px;
+    }
+  }
+  .PlayballBottomPlay-triple:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+
+  .PlayballBottomPlay-homerun {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    flex: 1;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+    // background: blue;
+    padding-right: 20px;
+    svg {
+      // icon
+      font-size: 1.4rem;
+      color: #3498db;
+      padding-top: 5px;
+      margin-right: 5px;
+    }
+  }
+  .PlayballBottomPlay-homerun:hover {
+    background: #00ced1;
+    cursor: pointer;
+    color: white;
+  }
+
+  .PlayballBottomPlay-out {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
     height: 100%;
     flex: 1;
     font-family: "Source Sans Pro", sans-serif;
@@ -74,39 +152,11 @@
       font-size: 1.4rem;
       color: red;
       padding-top: 5px;
-      margin-right: 20px;
+      margin-right: 5px;
     }
   }
 
-  .PlayballBottomPitch-strike:hover {
-    background: #00ced1;
-    cursor: pointer;
-    color: white;
-  }
-
-  .PlayballBottomPitch-play {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    flex: 1;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    background: lightyellow;
-    padding-right: 20px;
-    border-top: solid 1px darkgray;
-    svg {
-      // icon
-      font-size: 1.4rem;
-      color: green;
-      padding-top: 5px;
-      margin-right: 20px;
-    }
-  }
-
-  .PlayballBottomPitch-play:hover {
+  .PlayballBottomPlay-out:hover {
     background: #00ced1;
     cursor: pointer;
     color: white;

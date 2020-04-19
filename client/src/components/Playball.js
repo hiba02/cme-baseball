@@ -5,6 +5,7 @@ import PlayballTopHitter from "./PlayballTopHitter";
 import PlayballTopPitcher from "./PlayballTopPitcher";
 import PlayballTopBallCount from "./PlayballTopBallCount";
 import PlayballBottomPitch from "./PlayballBottomPitch";
+import PlayballBottomPlay from "./PlayballBottomPlay";
 import "./Playball.scss";
 
 const Playball = ({
@@ -22,6 +23,9 @@ const Playball = ({
   const [_1b, set_1b] = useState(false);
   const [_2b, set_2b] = useState(false);
   const [_3b, set_3b] = useState(false);
+  const [playWindow, setPlayWindow] = useState(false);
+  //count [countPitch, setCountPitch] = useState(0);
+
   const countInning = () => {
     // event.preventDefault();
     if (inning >= 9) {
@@ -81,6 +85,10 @@ const Playball = ({
   hitter ? console.log("hitter", hitter) : console.log("nothing");
   let rostNumber = 0;
   let positionNumber = 0;
+
+  const activePlayWindow = () => {
+    setPlayWindow(!playWindow);
+  };
 
   /////////////////////////////////////////////
 
@@ -204,9 +212,12 @@ const Playball = ({
               inning={inning}
               countInning={countInning}
               topBottom={topBottom}
+              activePlayWindow={activePlayWindow}
             />
           </div>
-          <div className="playball-bottom-ballInPlay"></div>
+          <div className="playball-bottom-ballInPlay">
+            {playWindow && <PlayballBottomPlay />}
+          </div>
           <div className="playball-bottom-runnerConrol"></div>
           <div className="playball-bottom-bar"></div>
         </footer>
