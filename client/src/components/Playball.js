@@ -403,7 +403,8 @@ const Playball = ({
               />
             )}
           </div>
-          <div className="playball-bottom-runnerConrol"></div>
+          <div className="playball-bottom-scoreboard"></div>
+
           <div className="playball-bottom-bar"></div>
         </footer>
       </div>
