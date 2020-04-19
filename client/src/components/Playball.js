@@ -8,6 +8,7 @@ import PlayballBottomPitch from "./PlayballBottomPitch";
 import PlayballBottomPlay from "./PlayballBottomPlay";
 import PlayballBottomScore from "./PlayballBottomScore";
 import PlayballBottomScoreTwo from "./PlayballBottomScoreTwo";
+import PlayballBottomScoreButton from "./PlayballBottomScoreButton";
 import "./Playball.scss";
 
 const Playball = ({
@@ -489,6 +490,7 @@ const Playball = ({
             {/* <div className="playball-bottom-scoreboard-title">SCORE</div> */}
             <PlayballBottomScore score={score} />
             <PlayballBottomScoreTwo />
+            <PlayballBottomScoreButton />
           </div>
 
           <div className="playball-bottom-bar"></div>

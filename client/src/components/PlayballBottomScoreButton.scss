@@ -1,75 +1,81 @@
-.PlayballBottomScoreTwo-container {
+.PlayballBottomScoreButton-container {
   width: 90%;
-  height: 50px;
-
+  height: 35px;
   margin-left: auto;
   margin-right: auto;
-  // margin-top: 5px;
-  border-radius: 0 0 8px 8px;
-  overflow: hidden;
+  margin-top: 15px;
+  // border-radius: 0 0 8px 8px;
+  // overflow: hidden;
   // background: #f8f9fa;
   padding: 0;
   display: flex;
   flex-direction: row;
 
-  background: #2d3033;
+  // background: #2d3033;
 
-  .PlayballBottomScoreTwo-htting {
+  .PlayballBottomScoreButton-reset {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background: #2d3033;
+    background: #134b83;
+    border-radius: 5px;
     height: 100%;
     flex: 2;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: rgb(235, 235, 47);
+    margin: 0 10px;
   }
 
-  ////////////////////////////
-  .PlayballBottomScoreTwo-hitting-number {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    // background: #2d3033
-    flex: 1;
-    height: 100%;
-    font-family: "Source Sans Pro", sans-serif;
-    font-weight: bold;
-    font-size: 1rem;
-    color: rgb(235, 235, 47);
+  .PlayballBottomScoreButton-reset:hover {
+    background: #3a81c9;
+    color: #ffffff;
+    cursor: pointer;
   }
 
-  .PlayballBottomScoreTwo-pitching {
+  .PlayballBottomScoreButton-home {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    // background: rgb(12, 77, 6);
+    background: #408532;
+    border-radius: 5px;
     flex: 2;
     height: 100%;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: rgb(235, 235, 47);
+    margin: 0 10px;
   }
 
-  .PlayballBottomScoreTwo-pitching-number {
+  .PlayballBottomScoreButton-home:hover {
+    background: #3a81c9;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .PlayballBottomScoreButton-away {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    // background: burlywood;
-    flex: 1;
+    background: rgb(12, 77, 6);
+    border-radius: 5px;
+    flex: 2;
     height: 100%;
     font-family: "Source Sans Pro", sans-serif;
     font-weight: bold;
     font-size: 1rem;
     color: rgb(235, 235, 47);
+    margin: 0 10px;
   }
 
-  ////////////////////////////////////////
+  .PlayballBottomScoreButton-away:hover {
+    background: #3a81c9;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }
