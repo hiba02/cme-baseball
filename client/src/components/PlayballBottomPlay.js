@@ -25,7 +25,12 @@ const PlayballBottomPlay = ({
   ball,
   countBall,
   out,
-  countOut
+  countOut,
+  singleHit,
+  doubleHit,
+  tripleHit,
+  homerunHit,
+  batterOut
 }) => {
   return (
     <div className="PlayballBottomPlay-container">
@@ -37,7 +42,7 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;BALL IN PLAY{" "}
         </span>
       </div>
-      <div className="PlayballBottomPlay-single" onClick={() => countBall()}>
+      <div className="PlayballBottomPlay-single" onClick={() => singleHit()}>
         <span className="PlayballBottomPlay-icon">
           <MdFilter1 />
         </span>
@@ -45,7 +50,7 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;&nbsp;&nbsp;Single
         </span>
       </div>
-      <div className="PlayballBottomPlay-double" onClick={() => countBall()}>
+      <div className="PlayballBottomPlay-double" onClick={() => doubleHit()}>
         <span className="PlayballBottomPlay-icon">
           <MdFilter2 />
         </span>
@@ -54,7 +59,7 @@ const PlayballBottomPlay = ({
         </span>
       </div>
 
-      <div className="PlayballBottomPlay-triple" onClick={() => countBall()}>
+      <div className="PlayballBottomPlay-triple" onClick={() => tripleHit()}>
         <span className="PlayballBottomPlay-icon">
           <MdFilter3 />
         </span>
@@ -62,7 +67,7 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;&nbsp;&nbsp;Triple
         </span>
       </div>
-      <div className="PlayballBottomPlay-homerun" onClick={() => countBall()}>
+      <div className="PlayballBottomPlay-homerun" onClick={() => homerunHit()}>
         <span className="PlayballBottomPlay-icon">
           <MdTagFaces />
         </span>
@@ -71,7 +76,7 @@ const PlayballBottomPlay = ({
         </span>
       </div>
 
-      <div className="PlayballBottomPlay-out" onClick={() => countStrike()}>
+      <div className="PlayballBottomPlay-out" onClick={() => batterOut()}>
         <span className="PlayballBottomPlay-icon">
           <MdHighlightOff />
         </span>

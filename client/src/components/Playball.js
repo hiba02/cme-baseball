@@ -88,6 +88,8 @@ const Playball = ({
 
   const activePlayWindow = () => {
     setPlayWindow(!playWindow);
+    setStrike(0);
+    setBall(0);
   };
 
   /////////////////////////////////////////////
@@ -128,6 +130,178 @@ const Playball = ({
     }
   };
 
+  // reset base runner -> no base
+  const resetRunner = () => {
+    set_1b(!playWindow);
+    set_2b(!playWindow);
+    set_3b(!playWindow);
+  };
+
+  const singleHit = () => {
+    // if there is no runner in a base
+    if (!_1b && !_2b && !_3b) {
+      baseRunnerCase("_1B");
+      // 1b
+    } else if (_1b && !_2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_1B2B"); //1B-3B?
+      // 2b
+    } else if (!_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_1B");
+      // score +1
+      // 3b
+    } else if (!_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_1B");
+      // score +1
+      // 1b, 2b
+    } else if (_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_1B3B");
+      // score +1
+      // 1b, 3b
+    } else if (_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_1B2B");
+      // score +1
+      // 2b, 3b
+    } else if (!_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_1B");
+      // score +1
+      // full 1b 2b 3b
+    } else if (_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_1B3B");
+      // score +2
+    }
+  };
+
+  const doubleHit = () => {
+    // if there is no runner in a base
+    if (!_1b && !_2b && !_3b) {
+      baseRunnerCase("_2B");
+      // 1b
+    } else if (_1b && !_2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_2B3B");
+      // 2b
+    } else if (!_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_2B");
+      // score +1
+      // 3b
+    } else if (!_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_2B");
+      // score +1
+      // 1b, 2b
+    } else if (_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_2B3B");
+      // score +1
+      // 1b, 3b
+    } else if (_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_2B3B");
+      // score +1
+      // 2b, 3b
+    } else if (!_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_2B");
+      // score +2
+      // full 1b 2b 3b
+    } else if (_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_2B3B");
+      // score +2
+    }
+  };
+
+  const tripleHit = () => {
+    // if there is no runner in a base
+    if (!_1b && !_2b && !_3b) {
+      baseRunnerCase("_3B");
+      // 1b
+    } else if (_1b && !_2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +1
+      // 2b
+    } else if (!_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +1
+      // 3b
+    } else if (!_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +1
+      // 1b, 2b
+    } else if (_1b && _2b && !_3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +2
+      // 1b, 3b
+    } else if (_1b && !_2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +2
+      // 2b, 3b
+    } else if (!_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +2
+      // full 1b 2b 3b
+    } else if (_1b && _2b && _3b) {
+      resetRunner();
+      baseRunnerCase("_3B");
+      // score +3
+    }
+  };
+
+  const homerunHit = () => {
+    // if there is no runner in a base
+    if (!_1b && !_2b && !_3b) {
+      resetRunner();
+      // score +1
+      // 1b
+    } else if (_1b && !_2b && !_3b) {
+      resetRunner();
+      // score +2
+      // 2b
+    } else if (!_1b && _2b && !_3b) {
+      resetRunner();
+      // score +2
+      // 3b
+    } else if (!_1b && !_2b && _3b) {
+      resetRunner();
+      // score +2
+      // 1b, 2b
+    } else if (_1b && _2b && !_3b) {
+      resetRunner();
+      // score +3
+      // 1b, 3b
+    } else if (_1b && !_2b && _3b) {
+      resetRunner();
+      // score +3
+      // 2b, 3b
+    } else if (!_1b && _2b && _3b) {
+      resetRunner();
+      // score +3
+      // full 1b 2b 3b
+    } else if (_1b && _2b && _3b) {
+      resetRunner();
+      // score +4
+    }
+  };
+
+  const batterOut = () => {
+    setStrike(0);
+    setBall(0);
+    setOut(out + 1);
+  };
   return (
     <div className="playball_body">
       <div className="playball_wrap">
@@ -195,10 +369,11 @@ const Playball = ({
                 </div>
               ))}
           </div>
-          {_1b && <span className="runner">runner</span>}
-          <div className="firstBase">1B</div>
-          <div className="secondBase">2B</div>
-          <div className="thirdBase">3B</div>
+
+          {/* Runner in a base */}
+          {_1b && <div className="firstBase">1B</div>}
+          {_2b && <div className="secondBase">2B</div>}
+          {_3b && <div className="thirdBase">3B</div>}
         </section>
         <footer className="playball_footer">
           <div className="playball-bottom-pitchAction">
@@ -216,7 +391,15 @@ const Playball = ({
             />
           </div>
           <div className="playball-bottom-ballInPlay">
-            {playWindow && <PlayballBottomPlay />}
+            {playWindow && (
+              <PlayballBottomPlay
+                singleHit={singleHit}
+                doubleHit={doubleHit}
+                tripleHit={tripleHit}
+                homerunHit={homerunHit}
+                batterOut={batterOut}
+              />
+            )}
           </div>
           <div className="playball-bottom-runnerConrol"></div>
           <div className="playball-bottom-bar"></div>
