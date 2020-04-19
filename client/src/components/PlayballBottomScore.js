@@ -9,16 +9,14 @@ import cn from "classnames";
 const PlayballBottomScore = () => {
   return (
     <div className="PlayballBottomScore-container">
-      <div className="PlayballBottomScore-board-top">
-        <span className="PlayballBottomScore-team">
-          <div className="PlayballBottomScore-team-home">HOME</div>
-          <div className="PlayballBottomScore-team-score">0</div>
-        </span>
-        <span className="PlayballBottomScore-team">
-          <div className="PlayballBottomScore-team-home">AWAY</div>
-          <div className="PlayballBottomScore-team-score">0</div>
-        </span>
-      </div>
+      <span className="PlayballBottomScore-team">
+        <div className="PlayballBottomScore-team-home">HOME</div>
+        <div className="PlayballBottomScore-team-score">0</div>
+      </span>
+      <span className="PlayballBottomScore-team">
+        <div className="PlayballBottomScore-team-away">AWAY</div>
+        <div className="PlayballBottomScore-team-score">0</div>
+      </span>
     </div>
   );
 };

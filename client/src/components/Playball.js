@@ -6,6 +6,8 @@ import PlayballTopPitcher from "./PlayballTopPitcher";
 import PlayballTopBallCount from "./PlayballTopBallCount";
 import PlayballBottomPitch from "./PlayballBottomPitch";
 import PlayballBottomPlay from "./PlayballBottomPlay";
+import PlayballBottomScore from "./PlayballBottomScore";
+import PlayballBottomScoreTwo from "./PlayballBottomScoreTwo";
 import "./Playball.scss";
 
 const Playball = ({
@@ -403,7 +405,11 @@ const Playball = ({
               />
             )}
           </div>
-          <div className="playball-bottom-scoreboard"></div>
+          <div className="playball-bottom-scoreboard">
+            <div className="playball-bottom-scoreboard-title">SCORE</div>
+            <PlayballBottomScore />
+            <PlayballBottomScoreTwo />
+          </div>
 
           <div className="playball-bottom-bar"></div>
         </footer>
