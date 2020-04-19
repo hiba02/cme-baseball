@@ -224,7 +224,18 @@ const App = () => {
   const getHitterFromPlayerInfo = id => {
     if (playersInfo) {
       setHitter(playersInfo.filter(p => p.id === id)[0]);
-      console.log("pitcher:", hitter);
+      console.log("App.js getHitterFromPlayerInfo pitcher:", hitter);
+      // toggleCheckFromHitterId(id);
+    }
+  };
+
+  //4.18.20: toggle check hitter from current hitter
+  const toggleCheckFromHitterId = id => {
+    if (hitter) {
+      setPlayersInfo(
+        playersInfo.map(p => (p.id === id ? { ...p, check: !p.check } : p))
+      );
+      console.log("App.js toggleCheckFromHitterId hitter:", hitter);
     }
   };
 
@@ -368,6 +379,7 @@ const App = () => {
                   pitcher={pitcher}
                   hitter={hitter}
                   getHitterFromPlayerInfo={getHitterFromPlayerInfo}
+                  toggleCheckFromHitterId={toggleCheckFromHitterId}
                 />
               </Route>
               <Route path="/">

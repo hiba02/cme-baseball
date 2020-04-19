@@ -1,7 +1,12 @@
 import React from "react";
 import "./Roster.scss";
 
-const Roster = ({ player, number, getHitterFromPlayerInfo }) => {
+const Roster = ({
+  player,
+  number,
+  getHitterFromPlayerInfo,
+  toggleCheckFromHitterId
+}) => {
   const {
     id,
     first_name,
@@ -22,7 +27,13 @@ const Roster = ({ player, number, getHitterFromPlayerInfo }) => {
   console.log("Roster number: ", number);
 
   return (
-    <div className="roster_body" onClick={() => getHitterFromPlayerInfo(id)}>
+    <div
+      className="roster_body"
+      onClick={() => {
+        toggleCheckFromHitterId(id);
+        getHitterFromPlayerInfo(id);
+      }}
+    >
       <span className="id">{number}</span>
       <span className="name">
         {name},#{uniform_number}
