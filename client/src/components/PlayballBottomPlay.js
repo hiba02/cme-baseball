@@ -30,7 +30,8 @@ const PlayballBottomPlay = ({
   doubleHit,
   tripleHit,
   homerunHit,
-  batterOut
+  batterOut,
+  activePlayWindow
 }) => {
   return (
     <div className="PlayballBottomPlay-container">
@@ -42,7 +43,13 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;BALL IN PLAY{" "}
         </span>
       </div>
-      <div className="PlayballBottomPlay-single" onClick={() => singleHit()}>
+      <div
+        className="PlayballBottomPlay-single"
+        onClick={() => {
+          singleHit();
+          activePlayWindow();
+        }}
+      >
         <span className="PlayballBottomPlay-icon">
           <MdFilter1 />
         </span>
@@ -50,7 +57,13 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;&nbsp;&nbsp;Single
         </span>
       </div>
-      <div className="PlayballBottomPlay-double" onClick={() => doubleHit()}>
+      <div
+        className="PlayballBottomPlay-double"
+        onClick={() => {
+          doubleHit();
+          activePlayWindow();
+        }}
+      >
         <span className="PlayballBottomPlay-icon">
           <MdFilter2 />
         </span>
@@ -59,7 +72,13 @@ const PlayballBottomPlay = ({
         </span>
       </div>
 
-      <div className="PlayballBottomPlay-triple" onClick={() => tripleHit()}>
+      <div
+        className="PlayballBottomPlay-triple"
+        onClick={() => {
+          tripleHit();
+          activePlayWindow();
+        }}
+      >
         <span className="PlayballBottomPlay-icon">
           <MdFilter3 />
         </span>
@@ -67,7 +86,13 @@ const PlayballBottomPlay = ({
           &nbsp;&nbsp;&nbsp;&nbsp;Triple
         </span>
       </div>
-      <div className="PlayballBottomPlay-homerun" onClick={() => homerunHit()}>
+      <div
+        className="PlayballBottomPlay-homerun"
+        onClick={() => {
+          homerunHit();
+          activePlayWindow();
+        }}
+      >
         <span className="PlayballBottomPlay-icon">
           <MdTagFaces />
         </span>
@@ -76,7 +101,13 @@ const PlayballBottomPlay = ({
         </span>
       </div>
 
-      <div className="PlayballBottomPlay-out" onClick={() => batterOut()}>
+      <div
+        className="PlayballBottomPlay-out"
+        onClick={() => {
+          batterOut();
+          activePlayWindow();
+        }}
+      >
         <span className="PlayballBottomPlay-icon">
           <MdHighlightOff />
         </span>
