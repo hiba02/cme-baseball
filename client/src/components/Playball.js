@@ -487,9 +487,9 @@ const Playball = ({
           </div>
 
           {/* Runner in a base */}
-          {_1b && <div className="firstBase">1B</div>}
-          {_2b && <div className="secondBase">2B</div>}
-          {_3b && <div className="thirdBase">3B</div>}
+          {_1b && <div className="firstBase"></div>}
+          {_2b && <div className="secondBase"></div>}
+          {_3b && <div className="thirdBase"></div>}
         </section>
         <footer className="playball_footer">
           <div className="playball-bottom-pitchAction">

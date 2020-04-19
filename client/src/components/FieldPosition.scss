@@ -71,42 +71,48 @@
 }
 
 .firstBase {
+  border-radius: 50%;
   color: #fff;
   position: absolute;
   right: 32%;
   top: 370px;
   background: coral;
+  border: solid 3px rgb(43, 4, 4);
   opacity: 0.7;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .secondBase {
+  border-radius: 50%;
   color: #fff;
   position: absolute;
   left: 44%;
   top: 280px;
   background: coral;
+  border: solid 3px rgb(43, 4, 4);
   opacity: 0.7;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .thirdBase {
+  border-radius: 50%;
   color: #fff;
   position: absolute;
   left: 32%;
   top: 400px;
   background: coral;
+  border: solid 3px rgb(43, 4, 4);
   opacity: 0.7;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
