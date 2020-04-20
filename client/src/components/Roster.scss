@@ -1,9 +1,10 @@
 .roster_body {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  // justify-content: space-between;
+  flex-direction: row;
+  // align-items: flex-start;
   padding: 5px;
-  cursor: pointer;
+  // cursor: pointer;
 
   &:nth-child(even) {
     background: #f8f9fa;
@@ -17,8 +18,27 @@
   & + & {
     border-top: 1px solid #dee2e6;
   }
-  .id {
+  .roster-id {
     font-family: "Courier New", Courier, monospace;
     font-weight: bold;
+  }
+
+  span {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .roster-icon-plus {
+    color: green;
+    cursor: pointer;
+  }
+  .roster-icon-minus {
+    color: red;
+    cursor: pointer;
+  }
+  .roster-name {
+    font-size: 0.7rem;
   }
 }

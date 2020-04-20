@@ -17,7 +17,8 @@ const Playball = ({
   pitcher,
   hitter,
   getHitterFromPlayerInfo,
-  toggleCheckFromHitterId
+  toggleCheckFromHitterId,
+  removePlayerById
 }) => {
   const [inning, setInning] = useState(1);
   const [topBottom, setTopBottom] = useState(true);
@@ -466,6 +467,7 @@ const Playball = ({
                     number={(rostNumber = rostNumber + 1)}
                     getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                     toggleCheckFromHitterId={toggleCheckFromHitterId}
+                    removePlayerById={removePlayerById}
                   />
                 ))}
             </div>

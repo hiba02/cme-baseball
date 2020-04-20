@@ -104,7 +104,7 @@ const App = () => {
     setPlayersInfo(playersInfo.filter(p => p.id !== id));
   };
 
-  // get user infomation by user email /email/:email - 4.20.20
+  // get user infomation by user email /email/:email -
   const getUserInfoByEmail = email => {
     return axios({
       method: "GET",
@@ -401,6 +401,7 @@ const App = () => {
                   hitter={hitter}
                   getHitterFromPlayerInfo={getHitterFromPlayerInfo}
                   toggleCheckFromHitterId={toggleCheckFromHitterId}
+                  removePlayerById={removePlayerById}
                 />
               </Route>
               <Route path="/">
