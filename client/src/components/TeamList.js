@@ -22,8 +22,14 @@ const TeamList = ({
 
   return (
     <Fragment>
-      <div className="teamList_body" onClick={() => moveAndShowTeamRoster(id)}>
-        {redirect && <Redirect to="/showRoster" />}
+      <div
+        className="teamList_body"
+        onClick={() => {
+          moveAndShowTeamRoster(id);
+          setRedirect(true);
+        }}
+      >
+        {redirect && <Redirect to="/showPlayer" />}
         <div
           className="teamList_contents"
           // onClick={() => moveAndShowTeamRoster(id)}
