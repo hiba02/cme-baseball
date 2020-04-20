@@ -284,6 +284,14 @@ const App = () => {
       .catch(error => console.log(error));
   };
 
+  // 4.20.20 logout
+  const logout = () => {
+    setUserId(1);
+    setUserInfo(null);
+    setPlayersInfo(null);
+    setTeamNames(null);
+  };
+
   // add players -4.15.20
   const addNewPlayers = (
     team_id,
@@ -331,9 +339,19 @@ const App = () => {
                 Home
               </Link>
 
-              <Link to="/login" className="header_link">
-                Login
-              </Link>
+              {!userInfo ? (
+                <Link to="/login" className="header_link">
+                  Login
+                </Link>
+              ) : (
+                <Link
+                  to="/login"
+                  className="header_link"
+                  onClick={() => logout()}
+                >
+                  Logout
+                </Link>
+              )}
             </div>
           </div>
           <header>
