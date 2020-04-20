@@ -22,7 +22,7 @@ export default function Header(props) {
             {/* header title */}
             <div className="header_title">
               <Link to="/playball">
-                <h1>CE Baseball Score Book</h1>
+                <h1>CME Baseball Score Book</h1>
               </Link>
             </div>
             {/* header icons */}

@@ -290,6 +290,7 @@ const App = () => {
     setUserInfo(null);
     setPlayersInfo(null);
     setTeamNames(null);
+    setCurrentTeam("");
   };
 
   // add players -4.15.20
