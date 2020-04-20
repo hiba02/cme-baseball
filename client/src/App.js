@@ -319,6 +319,17 @@ const App = () => {
       <p>{word}</p> */}
       <div className="app-wrap">
         <Router>
+          <div className="top-header">
+            <div className="header_menu">
+              <Link to="/" className="header_link">
+                Home
+              </Link>
+
+              <Link to="/login" className="header_link">
+                Login
+              </Link>
+            </div>
+          </div>
           <header>
             <Header />
           </header>
