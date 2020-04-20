@@ -11,7 +11,8 @@ const PlayballBottomScoreButton = ({
   resetScore,
   addOneScoreAway,
   resetHittingNumber,
-  resetPitchNumber
+  resetPitchNumber,
+  resetRunnerForScore
 }) => {
   return (
     <div className="PlayballBottomScoreButton-container">
@@ -20,6 +21,7 @@ const PlayballBottomScoreButton = ({
           resetScore();
           resetPitchNumber();
           resetHittingNumber();
+          resetRunnerForScore();
         }}
         className="PlayballBottomScoreButton-reset"
       >
