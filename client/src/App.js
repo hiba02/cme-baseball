@@ -327,6 +327,40 @@ const App = () => {
     }).catch(error => console.log(error));
   };
 
+  // 4.20.20 add new player in client
+  //4.14.20 for CreateTeam.js handleSubmit
+  const addNewPlayerInClient = (
+    team_id,
+    name,
+    uniform_number,
+    position,
+    bats,
+    throws,
+    check
+  ) => {
+    console.log(
+      "App.js addNewPlayerInClient: parameter",
+      teamId,
+      name,
+      uniform_number,
+      position,
+      bats,
+      throws,
+      check
+    );
+    const player = {
+      id: nextId.current,
+      name: name,
+      uniform_number: uniform_number,
+      position: position,
+      bats: bats,
+      throws: throws,
+      check: check
+    };
+    setPlayersInfo(playersInfo.concat(player));
+    nextId.current += 1;
+  };
+
   return (
     <div className="app-body">
       {/* <button onClick={test}>TEST axios</button>
@@ -400,7 +434,11 @@ const App = () => {
                 />
               </Route>
               <Route path="/createPlayer">
-                <CreatePlayer addNewPlayers={addNewPlayers} teamId={teamId} />
+                <CreatePlayer
+                  addNewPlayers={addNewPlayers}
+                  teamId={teamId}
+                  addNewPlayerInClient={addNewPlayerInClient}
+                />
               </Route>
               <Route path="/showPlayer">
                 <ShowPlayers

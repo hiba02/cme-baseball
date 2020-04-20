@@ -34,7 +34,7 @@ const Nav = ({ userInfo, currentTeam }) => {
             </li>
             <li>
               <Link to="/showTeam" className="menu_link">
-                Show Team{" "}
+                Show Teams{" "}
                 <i className="fa fa-angle-double-right" aria-hidden="true"></i>
               </Link>
             </li>

@@ -2,7 +2,7 @@ import React, { useState, Fragment, useCallback, useRef } from "react";
 import { Redirect, Link } from "react-router-dom";
 import "./CreatePlayer.scss";
 
-const CreatePlayer = ({ addNewPlayers, teamId }) => {
+const CreatePlayer = ({ addNewPlayers, teamId, addNewPlayerInClient }) => {
   // need to get team-id!!
   console.log("CreatePlayer teamId", teamId);
   const [redirectHome, setRedirectHome] = useState(false);
@@ -51,6 +51,16 @@ const CreatePlayer = ({ addNewPlayers, teamId }) => {
   const handleSubmit = useCallback(
     e => {
       e.preventDefault();
+      // 4.20.20 : add to playersInfo in client
+      addNewPlayerInClient(
+        teamId,
+        name,
+        uniform_number,
+        position,
+        bats,
+        throws,
+        check
+      );
       addNewPlayers(
         teamId,
         name,
