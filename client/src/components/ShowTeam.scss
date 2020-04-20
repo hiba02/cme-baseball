@@ -9,12 +9,13 @@
   margin: 3rem;
 
   .showTeam-box {
-    background-color: lightblue;
+    background-color: rgb(217, 235, 241);
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
+    border: solid #ffffff 3px;
+    border-radius: 25px;
     // justify-content: space-around;
     // align-content: flex-start;
     // align-items: flex-start;
