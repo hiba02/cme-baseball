@@ -2,22 +2,29 @@ import React, { useState, Fragment } from "react";
 import { Redirect, Link } from "react-router-dom";
 import "./TeamList.scss";
 import logo from "../img/hitter-logo.png";
+
 const TeamList = ({
   team,
   getPlayersFromSameTeam,
   getPlayersByteamId,
   setTeamId,
-  setPlayersInfo
+  setPlayersInfo,
+  getCurrentTeamByTeamId,
+  currentTeam,
+  setCurrentTeam
 }) => {
   const [redirect, setRedirect] = useState(false);
   console.log("TeamList team getPlayersFromSameTeam", team);
+  console.log("TeamList currentTeam", currentTeam);
   const { id, name } = team;
 
-  const moveAndShowTeamRoster = id => {
+  const moveAndShowTeamRoster = (id, name) => {
     // getPlayersFromSameTeam(id);
     getPlayersByteamId(id);
     setTeamId(id);
     setRedirect(true);
+    // getCurrentTeamByTeamId(id);
+    setCurrentTeam(name);
   };
 
   return (
@@ -25,7 +32,7 @@ const TeamList = ({
       <div
         className="teamList_body"
         onClick={() => {
-          moveAndShowTeamRoster(id);
+          moveAndShowTeamRoster(id, name);
           setRedirect(true);
         }}
       >

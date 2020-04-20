@@ -7,7 +7,10 @@ const ShowTeam = ({
   getPlayersFromSameTeam,
   getPlayersByteamId,
   setTeamId,
-  setPlayersInfo
+  setPlayersInfo,
+  getCurrentTeamByTeamId,
+  currentTeam,
+  setCurrentTeam
 }) => {
   console.log("ShowTeam teamNames", teamNames);
   return (
@@ -23,6 +26,9 @@ const ShowTeam = ({
                 getPlayersByteamId={getPlayersByteamId}
                 setTeamId={setTeamId}
                 setPlayersInfo={setPlayersInfo}
+                getCurrentTeamByTeamId={getCurrentTeamByTeamId}
+                currentTeam={currentTeam}
+                setCurrentTeam={setCurrentTeam}
               />
             ))
           : ""}

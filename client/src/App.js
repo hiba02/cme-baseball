@@ -22,8 +22,9 @@ const App = () => {
   const [userId, setUserId] = useState(1);
   const [userInfo, setUserInfo] = useState(null);
   const [playersInfo, setPlayersInfo] = useState(null);
-  const [teamNames, setTeamNames] = useState(null);
+  const [teamNames, setTeamNames] = useState(null); //[]
   const [teamId, setTeamId] = useState(1);
+  const [currentTeam, setCurrentTeam] = useState("");
   const [pitcher, setPitcher] = useState({
     name: "A Aron",
     uniform_number: "35",
@@ -97,6 +98,15 @@ const App = () => {
     },
     [teamNames]
   );
+
+  //4.19.20 get a current team by team id
+  const getCurrentTeamByTeamId = id => {
+    // setCurrentTeam(
+    //   teamNames.filter(t => {
+    //     t.id === id;
+    //   })
+    // );
+  };
 
   // get user infomation by user email /email/:email - 4.20.20
   const getUserInfoByEmail = email => {
@@ -334,7 +344,7 @@ const App = () => {
             <Header />
           </header>
           <aside>
-            <Nav userInfo={userInfo} />
+            <Nav userInfo={userInfo} currentTeam={currentTeam} />
           </aside>
           <section>
             <Switch>
@@ -371,6 +381,9 @@ const App = () => {
                   getPlayersByteamId={getPlayersByteamId}
                   setTeamId={setTeamId}
                   setPlayersInfo={setPlayersInfo}
+                  getCurrentTeamByTeamId={getCurrentTeamByTeamId}
+                  currentTeam={currentTeam}
+                  setCurrentTeam={setCurrentTeam}
                 />
               </Route>
               <Route path="/createPlayer">
@@ -381,6 +394,7 @@ const App = () => {
                   user={userInfo}
                   players={playersInfo}
                   teamId={teamId}
+                  currentTeam={currentTeam}
                 />
               </Route>
               <Route path="/playball">
@@ -394,7 +408,7 @@ const App = () => {
                 />
               </Route>
               <Route path="/">
-                {/* {!userInfo && <Slideshow />} */}
+                {!userInfo && <Slideshow />}
                 {/* <Slideshow /> */}
               </Route>
             </Switch>

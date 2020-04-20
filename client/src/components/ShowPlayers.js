@@ -3,9 +3,10 @@ import { Redirect, Link } from "react-router-dom";
 import Roster from "./Roster";
 import "./ShowPlayers.scss";
 
-const ShowPlayers = ({ user, players, teamId }) => {
+const ShowPlayers = ({ user, players, teamId, currentTeam }) => {
   console.log("showPlayers component players: ", players);
   console.log("showPlayers component teamId: ", teamId);
+  console.log("showPlayers component teamId: ", currentTeam);
   let rostNumber = 0;
   let positionNumber = 0;
   return (

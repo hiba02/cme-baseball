@@ -6,11 +6,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NewWindow from "react-new-window";
 import Slideshow from "./Slideshow";
 
-const Nav = props => {
-  console.log("Nav conponent", props.userInfo);
+const Nav = ({ userInfo, currentTeam }) => {
+  console.log("Nav conponent userInfo", userInfo);
+  console.log("Nav conponent currentTeam", currentTeam);
   let userFirstName = "";
-  if (props.userInfo) {
-    userFirstName = props.userInfo.first_name;
+  if (userInfo) {
+    userFirstName = userInfo.first_name;
   } else {
     userFirstName = "user";
   }
@@ -18,10 +19,12 @@ const Nav = props => {
   return (
     <article className="Nav_component">
       <div className="menu">
-        <p className="col_desc">Hello, {userFirstName}</p>
+        <p className="Nav-title">Hello, {userFirstName}</p>
+        {currentTeam ? <p>Team</p> : ""}
+        {currentTeam ? <p className="Nav-team"> {currentTeam}</p> : ""}
         <h4 className="col_title">Menu</h4>
 
-        {props.userInfo ? (
+        {userInfo ? (
           <ul>
             <li>
               <Link to="/createTeam" className="menu_link">
@@ -37,7 +40,7 @@ const Nav = props => {
             </li>
             <li>
               <Link to="/createPlayer" className="menu_link">
-                New Player{" "}
+                Create Player{" "}
                 <i className="fa fa-angle-double-right" aria-hidden="true"></i>
               </Link>
             </li>

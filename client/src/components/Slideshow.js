@@ -3,7 +3,7 @@ import { Slide } from "react-slideshow-image";
 import "./Slideshow.scss";
 
 const slideImages = [
-  "./images/sharks3copy.jpg",
+  "./images/sharks2copy.jpg",
   "./images/iskras1copy.jpeg",
   "./images/taiwan1copy.jpeg",
   "./images/kobra1copy.jpeg"
