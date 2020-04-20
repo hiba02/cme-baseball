@@ -99,13 +99,9 @@ const App = () => {
     [teamNames]
   );
 
-  //4.19.20 get a current team by team id
-  const getCurrentTeamByTeamId = id => {
-    // setCurrentTeam(
-    //   teamNames.filter(t => {
-    //     t.id === id;
-    //   })
-    // );
+  //4.19.20 remove player
+  const removePlayerById = id => {
+    setPlayersInfo(playersInfo.filter(p => p.id !== id));
   };
 
   // get user infomation by user email /email/:email - 4.20.20
@@ -381,7 +377,6 @@ const App = () => {
                   getPlayersByteamId={getPlayersByteamId}
                   setTeamId={setTeamId}
                   setPlayersInfo={setPlayersInfo}
-                  getCurrentTeamByTeamId={getCurrentTeamByTeamId}
                   currentTeam={currentTeam}
                   setCurrentTeam={setCurrentTeam}
                 />
@@ -395,6 +390,7 @@ const App = () => {
                   players={playersInfo}
                   teamId={teamId}
                   currentTeam={currentTeam}
+                  removePlayerById={removePlayerById}
                 />
               </Route>
               <Route path="/playball">

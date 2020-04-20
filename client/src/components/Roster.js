@@ -1,11 +1,17 @@
 import React from "react";
 import "./Roster.scss";
-
+import {
+  FaCaretUp,
+  FaCaretDown,
+  FaPlusCircle,
+  FaMinusCircle
+} from "react-icons/fa";
 const Roster = ({
   player,
   number,
   getHitterFromPlayerInfo,
-  toggleCheckFromHitterId
+  toggleCheckFromHitterId,
+  removePlayerById
 }) => {
   const {
     id,
@@ -27,19 +33,25 @@ const Roster = ({
   console.log("Roster number: ", number);
 
   return (
-    <div
-      className="roster_body"
-      onClick={() => {
-        toggleCheckFromHitterId(id);
-        getHitterFromPlayerInfo(id);
-      }}
-    >
+    <div className="roster_body">
+      <span
+        className="roster-icon"
+        onClick={() => {
+          toggleCheckFromHitterId(id);
+          getHitterFromPlayerInfo(id);
+        }}
+      >
+        <FaPlusCircle />
+      </span>
       <span className="id">{number}</span>
       <span className="name">
         {name},#{uniform_number}
       </span>
       {/* <span className="uniform_number">{uniform_number}</span> */}
       <span className="position">{position}</span>
+      <span className="roster-icon">
+        <FaMinusCircle onClick={() => removePlayerById(id)} />
+      </span>
     </div>
   );
 };

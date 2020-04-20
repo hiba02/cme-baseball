@@ -3,7 +3,7 @@ import { Redirect, Link } from "react-router-dom";
 import Roster from "./Roster";
 import "./ShowPlayers.scss";
 
-const ShowPlayers = ({ user, players, teamId, currentTeam }) => {
+const ShowPlayers = ({ user, players, teamId, currentTeam,removePlayerById }) => {
   console.log("showPlayers component players: ", players);
   console.log("showPlayers component teamId: ", teamId);
   console.log("showPlayers component teamId: ", currentTeam);
@@ -20,7 +20,7 @@ const ShowPlayers = ({ user, players, teamId, currentTeam }) => {
                 user={user}
                 player={player}
                 key={player.id}
-                number={(rostNumber = rostNumber + 1)}
+                number={(rostNumber = rostNumber + 1)} removePlayerById={removePlayerById}
               />
             ))}
         </div>

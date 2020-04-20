@@ -9,7 +9,7 @@ const TeamList = ({
   getPlayersByteamId,
   setTeamId,
   setPlayersInfo,
-  getCurrentTeamByTeamId,
+
   currentTeam,
   setCurrentTeam
 }) => {

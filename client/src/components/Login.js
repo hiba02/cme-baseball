@@ -46,7 +46,7 @@ const Login = ({ login, getUserInfo }) => {
   return (
     <Fragment>
       {/* {redirectHome && <Redirect to="/" />} */}
-      {redirectHome && <Redirect to={`/`} />}
+      {redirectHome && <Redirect to={`/showTeam`} />}
       <main>
         <div className="login-container">
           <form className="login-form" onSubmit={handleLogin}>

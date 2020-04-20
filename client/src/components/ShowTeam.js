@@ -26,7 +26,6 @@ const ShowTeam = ({
                 getPlayersByteamId={getPlayersByteamId}
                 setTeamId={setTeamId}
                 setPlayersInfo={setPlayersInfo}
-                getCurrentTeamByTeamId={getCurrentTeamByTeamId}
                 currentTeam={currentTeam}
                 setCurrentTeam={setCurrentTeam}
               />
