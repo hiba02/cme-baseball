@@ -43,13 +43,16 @@
     align-items: center;
     justify-content: center;
     background: white;
-    flex: 2.5;
+    flex: 3;
+    font-size: 1rem;
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: bold;
   }
   .PlayballHitter-batting {
     display: flex;
     align-items: center;
     justify-content: center;
     background: white;
-    flex: 2.5;
+    flex: 0.5;
   }
 }

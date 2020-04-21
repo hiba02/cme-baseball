@@ -19,7 +19,7 @@ const PlayballTopHitter = ({ hitter }) => {
           {name}, #{uniform_number}
         </div>
       </span>
-      {/* <span className="PlayballHitter-batting">Batting: 0-0</span> */}
+      <span className="PlayballHitter-batting">{/* Batting: 0-0 */}</span>
     </div>
   );
 };

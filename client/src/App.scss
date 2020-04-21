@@ -92,7 +92,8 @@ h6 {
 .top-header {
   width: 100%;
   height: 40px;
-  background: #1f0c04;
+  // background: #1f0c04;
+  background-image: linear-gradient(to right, #1f0c04 0%, #723b24 100%);
 }
 
 .header_menu {
@@ -108,7 +109,7 @@ h6 {
 
 .header_menu .header_link {
   text-decoration: none;
-  color: #fff;
+  color: rgb(236, 236, 16);
   padding: 8px 0 6px 10px;
   // display: inline-block;
   transition: color 0.3s ease;
@@ -116,7 +117,7 @@ h6 {
 }
 
 .header_menu .header_link:hover {
-  color: #ccc;
+  color: lightyellow;
 }
 
 header {

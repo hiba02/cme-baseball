@@ -38,7 +38,7 @@ const CreateTeam = ({
 
   return (
     <Fragment>
-      {redirectHome && <Redirect to="/" />}
+      {redirectHome && <Redirect to="/showTeam" />}
       <div className="createTeam-container">
         <form onSubmit={handleSubmit}>
           {/* <form> */}
