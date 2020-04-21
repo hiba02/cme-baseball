@@ -65,6 +65,15 @@ export default function Header(props) {
                     <span>twitter</span>
                   </a>
                 </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/yoon-soon-kang-445874a2/"
+                  >
+                    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    <span>linkedin</span>
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

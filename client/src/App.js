@@ -436,9 +436,16 @@ const App = () => {
               </Route>
               <Route path="/createPlayer">
                 <CreatePlayer
+                  user={userInfo}
+                  players={playersInfo}
+                  pitcher={pitcher}
+                  hitter={hitter}
                   addNewPlayers={addNewPlayers}
                   teamId={teamId}
                   addNewPlayerInClient={addNewPlayerInClient}
+                  getHitterFromPlayerInfo={getHitterFromPlayerInfo}
+                  toggleCheckFromHitterId={toggleCheckFromHitterId}
+                  removePlayerById={removePlayerById}
                 />
               </Route>
               <Route path="/showPlayer">
@@ -462,8 +469,8 @@ const App = () => {
                 />
               </Route>
               <Route path="/">
-                {!userInfo && <Slideshow />}
-                {/* <Slideshow /> */}
+              <Slideshow />
+
               </Route>
             </Switch>
           </section>

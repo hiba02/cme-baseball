@@ -14,7 +14,7 @@ fieldset {
   overflow: hidden;
 
   .login-title {
-    background: #22b8cf;
+    background: #256633;
     color: white;
     height: 4rem;
     font-size: 1.5rem;
@@ -62,7 +62,7 @@ fieldset {
 .buttons button {
   background-color: rgb(7, 7, 83);
   border: none;
-  border-radius: 10px;
+  // border-radius: 10px;
   color: white;
   padding: 12px 32px;
   text-decoration: none;
@@ -72,9 +72,17 @@ fieldset {
   font-size: 1.2rem;
 }
 .buttons .registration-button {
-  background-color: darkgreen;
+  background-color: rgb(72, 61, 133);
 }
 .buttons button .header-link {
   color: white;
   font-size: 1.2rem;
+}
+
+.login-button:hover {
+  background-color: rgb(51, 51, 151);
+}
+
+.registration-button {
+  background-color: rgb(117, 117, 207);
 }

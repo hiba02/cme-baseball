@@ -13,7 +13,7 @@ fieldset {
   overflow: hidden;
 
   .register-title {
-    background: #794c08;
+    background: #0e611c;
     color: white;
     height: 4rem;
     font-size: 1.5rem;
@@ -43,7 +43,7 @@ fieldset {
     line-height: 1.5;
     color: #212f3d;
     &::placeholder {
-      color: #d5d8dc;
+      color: #474849;
     }
 
     // 버튼을 제외한 영역을 모두 차지하기
@@ -59,30 +59,30 @@ fieldset {
 .register-button {
   background-color: rgb(7, 7, 83);
   border: none;
-  border-radius: 10px;
+  // border-radius: 10px;
   color: white;
   padding: 12px 32px;
   text-decoration: none;
   margin: 4px 2px;
-  cursor: pointer;
-  width: 300px;
+
+  width: 100%;
   font-size: 1.2rem;
   text-align: center;
   margin-top: 50px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
+
   margin-left: auto;
   margin-right: auto;
   &:hover {
-    background-color: rgb(81, 81, 231);
+    background-color: rgb(38, 38, 151);
   }
 }
 
-.registration-link input[type="submit"] {
+.register-button input[type="submit"] {
   color: white;
   font-size: 1.2rem;
   // margin-left: 30px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .register-firstName {

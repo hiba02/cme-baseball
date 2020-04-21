@@ -1,155 +1,154 @@
-/* 테두리 초기화 */
-img,
-fieldset {
-  border: 0 none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 .createPlayer-container {
-  width: 40%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 6rem;
-  border-radius: 4px;
-  overflow: hidden;
-
-  .createPlayer-title {
-    background: #004d40;
-    color: white;
-    height: 4rem;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .createPlayer-content {
-    background: white;
-  }
+  width: 100%;
+  margin: 0 auto;
+  background: none;
+}
+.createPlayer-header {
+  width: 100%;
+  height: 50px;
+  background: none;
 }
 
-.createPlayer-form {
-  display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  // background: #f2f3f4;
+.createPlayer-aside {
+  float: left;
+  width: 50%;
+  height: 600px;
+  background: none;
 
-  input {
-    background: none;
-    outline: none;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    color: #212f3d;
-    &::placeholder {
-      color: #2c3e50;
+  .createPlayer-container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 23px;
+    border-radius: 4px;
+    overflow: hidden;
+
+    .createPlayer-title {
+      background: #004d40;
+      color: white;
+      height: 4rem;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .createPlayer-content {
+      background: white;
     }
 
-    // 버튼을 제외한 영역을 모두 차지하기
-    // flex: 1;
-    // border-bottom: 1px solid gray;
+    .createPlayer-buttons {
+      color: black;
+      font-weight: bold;
+      font-family: Overpass, sans-serif;
+      background: rgb(236, 228, 226);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .createPlayer-submit input {
+        background: rgb(36, 124, 50);
+        justify-content: flex-start;
+        color: rgb(221, 221, 85);
+        cursor: pointer;
+      }
+      .createPlayer-submit input:hover {
+        background: rgb(87, 190, 104);
+        color: rgb(209, 209, 173);
+      }
+    }
   }
-}
-.buttons {
-  display: flex;
-  justify-content: space-between;
+
+  .createPlayer-form {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+
+    input {
+      background: none;
+      outline: none;
+      border: none;
+      padding: 0.5rem;
+      font-size: 1.125rem;
+      line-height: 1.5;
+      color: #212f3d;
+      &::placeholder {
+        color: #2c3e50;
+      }
+    }
+  }
+
+  .createPlayer-reset {
+    svg {
+      margin-top: 15px;
+      font-size: 2.2rem;
+      color: rgb(53, 65, 57);
+      margin-right: 10px;
+      cursor: pointer;
+    }
+    svg:hover {
+      color: rgb(106, 168, 124);
+    }
+  }
 }
 
-.createPlayer-submit {
-  background-color: rgb(7, 7, 83);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 12px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 200px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 20px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  &:hover {
-    background-color: rgb(81, 81, 231);
+.createPlayer-section {
+  float: left;
+  width: 50%;
+  height: 600px;
+  background: none;
+  .roster_template {
+    .roster_title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      border-radius: 5px 5px 0 0;
+      height: 3.9rem;
+    }
+  }
+}
+.createPlayer-footer {
+  clear: both;
+  width: 100%;
+  height: 10px;
+  background: none;
+}
+
+/////////////////////////////
+@media (max-width: 1220px) {
+  #wrap {
+    width: 100%;
   }
 }
 
-.createPlayer-reset {
-  background-color: rgb(168, 36, 36);
-  border: none;
-  border-radius: 10px;
-  // color: white;
-  padding: 12px 32px;
-  text-decoration: none;
-  // margin: 4px 2px;
-  cursor: pointer;
-  width: 200px;
-  font-size: 1.5rem;
-  text-align: center;
-  margin-top: 20px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  &:hover {
-    background-color: rgb(81, 81, 231);
+/* screen 0 ~ 768px */
+@media (max-width: 768px) {
+  #wrap {
+    width: 100%;
   }
-  div {
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-  }
-}
-input[type="submit"] {
-  color: white;
-  font-size: 1.2rem;
-  // margin-left: 30px;
 }
 
-// .register-firstName {
-//   background: #f8f9fad7;
-//   border-bottom: 1px solid gray;
-// }
-// .register-lastName {
-//   border-bottom: 1px solid gray;
-// }
-// .register-email {
-//   background: #f8f9fad7;
-//   border-bottom: 1px solid gray;
-// }
-// .register-password {
-//   border-bottom: 1px solid gray;
-// }
-// .register-addTeam {
-//   background: #f8f9fad7;
-// }
-
-.createPlayer-button {
-  background-color: rgb(7, 7, 83);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  padding: 12px 32px;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  width: 200px;
-  font-size: 1.2rem;
-  text-align: center;
-  margin-top: 20px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  &:hover {
-    background-color: rgb(81, 81, 231);
+/* screen 0 ~ 480px */
+@media (max-width: 480px) {
+  #wrap {
+    width: 100%;
   }
-  .createPlayer-showTeam {
-    color: white;
+  header {
+    height: 300px;
+  }
+  aside {
+    float: none;
+    width: 100%;
+    height: 300px;
+  }
+  section {
+    float: none;
+    width: 100%;
+    height: 300px;
   }
 }
+
+////////////////////////////
