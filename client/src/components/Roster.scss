@@ -12,24 +12,66 @@
 
   &:hover {
     color: white;
-    background: darkturquoise;
+    background: rgb(133, 199, 162);
   }
 
   & + & {
     border-top: 1px solid #dee2e6;
   }
-  .roster-id {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
+  // .roster-id {
+  //   font-family: "Courier New", Courier, monospace;
+  //   font-weight: bold;
+  // }
+
+  .roster-icon-plus {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-  span {
+  .roster-id {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: Overpass, sans-serif;
   }
+
+  .roster-name {
+    display: flex;
+    flex: 1.5;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 0.9rem;
+    // font-weight: bold;
+    font-family: Overpass, sans-serif;
+  }
+
+  .position {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    font-family: Overpass, sans-serif;
+  }
+
+  .roster-icon-minus {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .roster-icon-plus {
     color: green;
     cursor: pointer;
@@ -37,8 +79,5 @@
   .roster-icon-minus {
     color: red;
     cursor: pointer;
-  }
-  .roster-name {
-    font-size: 0.7rem;
   }
 }

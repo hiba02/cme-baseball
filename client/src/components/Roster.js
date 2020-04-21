@@ -45,7 +45,7 @@ const Roster = ({
       </span>
       <span className="roster-id">{number}</span>
       <span className="roster-name">
-        {name},#{uniform_number}
+        {name},&nbsp;#{uniform_number}
       </span>
       {/* <span className="uniform_number">{uniform_number}</span> */}
       <span className="position">{position}</span>

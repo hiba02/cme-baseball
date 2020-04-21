@@ -2,25 +2,25 @@
   text-align: center;
   // background: chartreuse;
 }
-
 ._CF {
   color: #fff;
   position: absolute;
   left: 45%;
   top: 120px;
+  // font-size: 0.85rem;
 }
 
 ._LF {
   color: #fff;
   position: absolute;
-  left: 20%;
+  left: 16%;
   top: 200px;
 }
 
 ._RF {
   color: #fff;
   position: absolute;
-  right: 20%;
+  right: 16%;
   top: 200px;
 }
 
@@ -41,15 +41,15 @@
 ._SS {
   color: #fff;
   position: absolute;
-  left: 32%;
-  top: 280px;
+  left: 31%;
+  top: 260px;
 }
 
 ._2B {
   color: #fff;
   position: absolute;
-  right: 32%;
-  top: 280px;
+  right: 31%;
+  top: 260px;
 }
 
 ._P {
@@ -116,4 +116,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.field_position {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.field_position_name {
+  font-size: 0.85rem;
 }

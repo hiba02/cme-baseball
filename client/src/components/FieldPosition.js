@@ -27,7 +27,7 @@ const FieldPosition = ({ player, number }) => {
         <span className="player_name">{name}</span>
         <span className="uniform_number">, #{uniform_number}</span>
       </div>
-      <div className="field_position"> {position}</div>
+      <div className="field_position">{position}</div>
     </div>
   );
 };
