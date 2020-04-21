@@ -91,6 +91,9 @@
   font-size: 20px;
   line-height: 30px;
   transition: all 0.3s ease;
+  svg {
+    margin-bottom: -2px;
+  }
 }
 
 .header_container .header_icon li a span {

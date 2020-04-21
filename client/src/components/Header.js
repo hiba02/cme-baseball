@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.scss";
 // npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { DiJavascript1, DiReact } from "react-icons/di";
+import { DiJavascript1, DiReact, DiPostgresql, DiSass } from "react-icons/di";
 
 export default function Header(props) {
   return (
@@ -39,8 +39,9 @@ export default function Header(props) {
                 </li>
                 <li>
                   <a
+                    className="react-icon"
                     target="_blank"
-                    href="https://github.com/hiba02/cme-baseball"
+                    href="https://en.wikipedia.org/wiki/React_(web_framework)"
                   >
                     <DiReact />
                     <span>React</span>
@@ -54,6 +55,27 @@ export default function Header(props) {
                 </li>
                 <li>
                   <a
+                    className="react-icon"
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)"
+                  >
+                    <DiSass />
+                    <span>Sass</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="react-icon"
+                    target="_blank"
+                    href="https://en.wikipedia.org/wiki/PostgreSQL"
+                  >
+                    <DiPostgresql />
+                    <span>Postgresql</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a
                     target="_blank"
                     href="https://github.com/hiba02/cme-baseball"
                   >
@@ -61,12 +83,12 @@ export default function Header(props) {
                     <span>Github</span>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <i className="fa fa-facebook-square" aria-hidden="true"></i>
                     <span>Facebook</span>
                   </a>
-                </li>
+                </li> */}
                 {/* <li>
                   <a href="#">
                     <i className="fa fa-twitter" aria-hidden="true"></i>
