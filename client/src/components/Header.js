@@ -2,7 +2,7 @@ import React from "react";
 import "./Header.scss";
 // npm install react-router-dom
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { DiJavascript1, DiCss3 } from "react-icons/di";
+import { DiJavascript1, DiReact } from "react-icons/di";
 
 export default function Header(props) {
   return (
@@ -37,7 +37,15 @@ export default function Header(props) {
                     <span>JS</span>
                   </a>
                 </li>
-
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://github.com/hiba02/cme-baseball"
+                  >
+                    <DiReact />
+                    <span>React</span>
+                  </a>
+                </li>
                 <li>
                   <a href="https://en.wikipedia.org/wiki/HTML5">
                     <i className="fa fa-html5" aria-hidden="true"></i>
@@ -59,12 +67,12 @@ export default function Header(props) {
                     <span>Facebook</span>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <i className="fa fa-twitter" aria-hidden="true"></i>
                     <span>twitter</span>
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
                     target="_blank"
