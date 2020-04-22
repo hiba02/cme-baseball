@@ -6,7 +6,7 @@
   // margin-top: 20px;
   justify-content: center;
   align-items: center;
-  margin: 2rem;
+  margin: 1rem;
   // max-width: 450px;
   width: 250px;
   height: 150px;
@@ -14,7 +14,12 @@
   border-radius: 1rem;
   color: rgb(34, 47, 62);
   border: solid 3px white;
+  cursor: pointer;
 }
+.teamList_body:hover {
+  background-color: #f5ebc6;
+}
+
 .teamList_contents {
   margin: 10 10;
 }
@@ -33,7 +38,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: cornsilk;
+    background: rgb(243, 219, 210);
   }
 }
 

@@ -1,7 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Redirect, Link } from "react-router-dom";
 import "./TeamList.scss";
-import logo from "../img/hitter-logo.png";
+// import logo from "../img/hitter-logo.png";
+// import logo from "../img/baseball-ball.png";
+import logo from "../img/glove-clipart-6.png";
 
 const TeamList = ({
   team,

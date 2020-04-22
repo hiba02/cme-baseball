@@ -102,7 +102,7 @@ const PlayballBottomPlay = ({
           <MdTagFaces />
         </span>
         <span className="PlayballBottomPlay-ballCount">
-          &nbsp;&nbsp;Homerun
+          &nbsp;&nbsp;Home Run
         </span>
       </div>
 
