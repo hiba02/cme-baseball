@@ -9,8 +9,8 @@ Users can simulate baseball plays
 
 ## Final Product
 
-!["screenshot new player"](#https://github.com/hiba02/cme-baseball/blob/master/docs/cme_baseball_score_book_create_new_playbook.png)
-!["screenshot playball"](#https://github.com/hiba02/cme-baseball/blob/master/docs/cme_baseball_score_book_create_playbook.png)
+!["screenshot new player"](https://github.com/hiba02/cme-baseball/blob/master/docs/cme_baseball_score_book_create_new_playbook.png)
+!["screenshot playball"](https://github.com/hiba02/cme-baseball/blob/master/docs/cme_baseball_score_book_create_playbook.png)
 
 ## Stack
 
